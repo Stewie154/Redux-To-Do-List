@@ -6,7 +6,25 @@ import {
     DELETE_TODO
 } from '../actions/types'
 
-export default (state = [], action) => {
+let initialState = [
+    {
+        id: 0,
+        title: 'Clean the bathroom',
+        completed: false
+    },
+    {
+        id: 1,
+        title: 'Make dinner',
+        completed: true
+    },
+    {
+        id: 2,
+        title: 'Practice redux',
+        completed: false
+    }
+]
+
+export default (state = initialState, action) => {
     switch(action.type) {
         case FETCH_ALL_TODOS:
             return state
