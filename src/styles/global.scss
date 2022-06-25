@@ -10,3 +10,11 @@
 .background-primary {
     background: linear-gradient($color-primary-1, $color-primary-2);
 }
+
+.container-background-color {
+    background: $color-primary-1;
+}
+
+.border-color-secondary {
+    border: 1px solid $color-secondary;
+}
