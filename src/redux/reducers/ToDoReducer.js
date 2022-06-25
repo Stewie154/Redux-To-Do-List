@@ -6,3 +6,13 @@ import {
     DELETE_TODO
 } from '../actions/types'
 
+export default (state = [], action) => {
+    switch(action.type) {
+        case FETCH_ALL_TODOS:
+            return state
+        case CREATE_TODO:
+            return [...state, action.payload]
+        default:
+            return state   
+    }
+}
