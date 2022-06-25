@@ -6,28 +6,30 @@ import {
     DELETE_TODO
 } from '../actions/types'
 
-let initialState = [
-    {
-        id: 0,
-        title: 'Clean the bathroom',
-        completed: false
-    },
-    {
-        id: 1,
-        title: 'Make dinner',
-        completed: true
-    },
-    {
-        id: 2,
-        title: 'Practice redux',
-        completed: false
-    }
-]
-
+let initialState = {
+    userName: '',
+    allToDos: [
+        {
+            id: 0,
+            title: 'Clean the bathroom',
+            completed: false
+        },
+        {
+            id: 1,
+            title: 'Make dinner',
+            completed: true
+        },
+        {
+            id: 2,
+            title: 'Practice redux',
+            completed: false
+        }
+    ]    
+}
 export default (state = initialState, action) => {
     switch(action.type) {
         case FETCH_ALL_TODOS:
-            return state
+            return state.allToDos
         case CREATE_TODO:
             return [...state, action.payload]
         default:
