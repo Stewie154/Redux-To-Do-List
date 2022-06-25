@@ -3,7 +3,7 @@ import '../../index.css'
 import '../../styles/global.scss'
 
 import Header from '../header/Header'
-import ToDoList from '../todo-list/ToDoList'
+import ToDoList from '../to-do-list/ToDoList'
 
 
 const App = () => {
