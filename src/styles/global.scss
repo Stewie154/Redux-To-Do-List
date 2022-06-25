@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    color: $color-secondary;
+}
+
+.background-primary {
+    background: linear-gradient($color-primary-1, $color-primary-2);
+}
