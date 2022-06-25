@@ -6,28 +6,28 @@ import {
     DELETE_TODO
 } from './types'
 
-const fetchAllToDos = (allToDos) => {
+export const fetchAllToDos = (allToDos) => {
     return {
         type: FETCH_ALL_TODOS,
         payload: allToDos
     }
 }
 
-const createToDo = (toDo) => {
+export const createToDo = (toDo) => {
     return {
         type: CREATE_TODO,
         payload: toDo
     }
 }
 
-const editToDo = (toDo) => {
+export const editToDo = (toDo) => {
     return {
         type: CREATE_TODO,
         payload: toDo
     }
 }
 
-const deleteToDo = (toDo) => {
+export const deleteToDo = (toDo) => {
     return {
         type: CREATE_TODO,
         payload: toDo
