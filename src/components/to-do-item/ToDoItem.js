@@ -3,7 +3,7 @@ import React from 'react'
 const ToDoItem = ({ item }) => {
 	return (
 	<div className="flex justify-between items-center py-2">
-		<p>{item.title}</p>
+		<p className={`text-lg md:text-2xl ${item.completed && 'line-through opacity-20'}`}>{item.title}</p>
 		<div className="flex">
 			<img 
 				src="/images/icons/checkmark-circle-outline.svg" 
