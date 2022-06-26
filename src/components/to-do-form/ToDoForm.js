@@ -19,7 +19,6 @@ const ToDoForm = () => {
 			let newToDoItem = { id: Date.now(), title: currentText, completed: false }
 			dispatch(createToDo(newToDoItem))
 			dispatch(updateText(''))
-			console.log(newToDoItem)
 		}
 	}
 
