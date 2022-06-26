@@ -10,6 +10,11 @@ const ToDoItem = ({ item }) => {
 				alt="check icon"
 				className="w-6"
 			/>
+			<img 
+				src="/images/icons/trash-outline.svg" 
+				alt="check icon"
+				className="w-6"
+			/>
 		</div>
 	</div>
 	)
