@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/toDoForm'
+import { createToDo } from '../../redux/actions/toDos'
 
 const ToDoForm = () => {
 
@@ -11,10 +12,11 @@ const ToDoForm = () => {
 	const handleChange = (textValue) => {
 		dispatch(updateText(textValue))
 	}
-	
+
 	const handleSubmit = (event, currentText) => {
 		event.preventDefault()
 		let newToDoItem = { id: Date.now(), title: currentText, completed: false }
+		dispatch(createToDo(newToDoItem))
 		console.log(newToDoItem)
 	}
 
