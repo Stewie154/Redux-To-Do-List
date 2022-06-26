@@ -1,6 +1,6 @@
 import { UPDATE_TEXT } from "../actions/types";
 
-let initialState = 'hello'
+let initialState = ''
 
 export default (state = initialState, action) => {
     switch(action.type) {
