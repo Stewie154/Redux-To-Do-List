@@ -1,12 +1,20 @@
+import { render } from '@testing-library/react'
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import ToDoItem from '../to-do-item/ToDoItem'
+
 const ToDoList = () => {
 	const allToDos = useSelector(state => state.toDos)
-	console.log(allToDos)
-
+	const renderList = allToDos.map((item, key) => {
+		return (
+			<ToDoItem item={item} key={key}/>
+		)
+	})
 	return (
-		<div>ToDoList</div>
+		<>
+			{renderList}
+		</>
 	)
 }
 
