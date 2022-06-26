@@ -11,9 +11,9 @@ const ToDoList = () => {
 		)
 	})
 	return (
-		<>
+		<div className="h-3/4 overflow-scroll">
 			{renderList}
-		</>
+		</div>
 	)
 }
 
