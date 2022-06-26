@@ -17,6 +17,7 @@ const ToDoForm = () => {
 		event.preventDefault()
 		let newToDoItem = { id: Date.now(), title: currentText, completed: false }
 		dispatch(createToDo(newToDoItem))
+		dispatch(updateText(''))
 		console.log(newToDoItem)
 	}
 
