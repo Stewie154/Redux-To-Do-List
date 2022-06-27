@@ -24,7 +24,7 @@ const ToDoForm = () => {
 
 	return (
 		<form 
-			className="absolute bottom-0 left-0 w-full py-8 px-4 flex justify-between items-between border-t border-color-secondary"
+			className="absolute bottom-0 left-0 w-full py-8 px-4 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color"
 			onSubmit={(event) => handleSubmit(event, currentText)}
 		>
 			<input 
