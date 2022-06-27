@@ -8,7 +8,7 @@ const ToDoForm = () => {
 	const currentText = useSelector(state => state.currentText)
 	const dispatch = useDispatch()
 
-    const textInput = useRef(null)
+	const textInput = useRef(null)
 
 	const handleChange = (textValue) => {
 		dispatch(updateText(textValue))
@@ -23,9 +23,9 @@ const ToDoForm = () => {
 		}
 	}
 
-    useEffect(() => {
-        textInput.current.focus()
-    }, [])
+	useEffect(() => {
+		textInput.current.focus()
+	}, [])
 
 	return (
 		<form 
@@ -38,7 +38,7 @@ const ToDoForm = () => {
 				placeholder="Enter to do task..." 
 				className="w-9/12 bg-transparent border-0 text-lg md:text-2xl focus:outline-0" 
 				onChange={ (e) => { handleChange(e.target.value) } }
-                ref={textInput}
+				ref={textInput}
 			/>
 			<button type="submit" className="self-center border border-color-secondary py-2 px-4 rounded-lg transition-all duration-75 ease-out hover:ease-in hover:opacity-70">
 				Add Task
