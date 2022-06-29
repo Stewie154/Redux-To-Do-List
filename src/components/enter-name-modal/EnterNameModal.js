@@ -18,8 +18,12 @@ const EnterNameModal = () => {
 	}
 
 	return (
-	<form className="text-black" onSubmit={() => handleSubmit(nameDisplay)}>
-		<input type="text" onChange={(event) => handleChange(event)}/>
+	<form className="" onSubmit={() => handleSubmit(nameDisplay)}>
+		<input 
+			type="text" 
+			onChange={(event) => handleChange(event)}
+			placeholder="Enter your name..."
+		/>
 	</form>
 	)
 }
