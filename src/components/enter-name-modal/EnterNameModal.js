@@ -1,16 +1,25 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { setUserName } from '../../redux/actions/user'
+
 
 const EnterNameModal = () => {
+	const dispatch = useDispatch()
 	const userName = useSelector(state => state.userName)
 
+	let nameDisplay = ''
+
 	const handleChange = (event) => {
-		console.log(event.target.value)
+		nameDisplay = event.target.value
+	}
+
+	const handleSubmit = (userName) => {
+		dispatch(setUserName(userName))
 	}
 
 	return (
-	<form>
-		<input type="text" value={userName} onChange={(event) => handleChange(event)}/>
+	<form className="text-black" onSubmit={() => handleSubmit(nameDisplay)}>
+		<input type="text" onChange={(event) => handleChange(event)}/>
 	</form>
 	)
 }
