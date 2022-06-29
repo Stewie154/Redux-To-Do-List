@@ -1,6 +1,6 @@
 import { SET_USERNAME } from "../actions/types";
 
-let initialState = 'Username Here'
+let initialState = ''
 
 export default (state = initialState, action) => {
     switch (action.type) {
