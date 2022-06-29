@@ -1,6 +1,6 @@
 import { SET_USERNAME } from "./types"
 
-export const setUser = (username) => {
+export const setUserName = (username) => {
     return {
         type: SET_USERNAME,
         payload: username

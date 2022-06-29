@@ -4,7 +4,7 @@ import userReducer from './userReducer'
 import toDoFormReducer from "./toDoFormReducer"
 
 export default combineReducers({
-    user: userReducer,
+    userName: userReducer,
     toDos: toDoReducer,
     currentText: toDoFormReducer
 })
