@@ -8,7 +8,6 @@ const ToDoItem = ({ item }) => {
 
     const handleDelete = (id) => {
         dispatch(deleteToDo(id))
-        console.log(id)
     }
 
 	return (
