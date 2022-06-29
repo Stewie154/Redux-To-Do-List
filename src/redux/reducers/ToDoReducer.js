@@ -1,8 +1,6 @@
 import {
-	FETCH_ALL_TODOS,
-	FETCH_TODO,
 	CREATE_TODO,
-	EDIT_TODO,
+	TOGGLE_TODO,
 	DELETE_TODO
 } from '../actions/types'
 
@@ -27,8 +25,6 @@ let initialState = [
 
 export default (state = initialState, action) => {
 	switch(action.type) {
-		case FETCH_ALL_TODOS:
-			return state
 		case CREATE_TODO:
 			return [...state, action.payload]
 		case DELETE_TODO:
