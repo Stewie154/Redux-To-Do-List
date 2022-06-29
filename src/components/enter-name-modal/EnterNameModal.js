@@ -18,8 +18,9 @@ const EnterNameModal = () => {
 	}
 
 	return (
-	<form className="" onSubmit={() => handleSubmit(nameDisplay)}>
+	<form className="absolute top-0 left-0 rounded-lg border border-color-secondary h-full w-full" onSubmit={() => handleSubmit(nameDisplay)}>
 		<input 
+			className=" container-background-color text-5xl py-5"
 			type="text" 
 			onChange={(event) => handleChange(event)}
 			placeholder="Enter your name..."

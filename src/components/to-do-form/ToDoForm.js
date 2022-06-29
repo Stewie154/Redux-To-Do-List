@@ -5,6 +5,7 @@ import { createToDo } from '../../redux/actions/toDos'
 
 const ToDoForm = () => {
 	const currentText = useSelector(state => state.currentText)
+    const userName = useSelector(state => state.userName)
 	const dispatch = useDispatch()
 
 	const textInput = useRef(null)
@@ -28,7 +29,7 @@ const ToDoForm = () => {
 
 	return (
 		<form 
-			className="absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color"
+			className={`${userName === '' && 'hidden'} absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
 			onSubmit={(event) => handleSubmit(event, currentText)}
 		>
 			<input 
