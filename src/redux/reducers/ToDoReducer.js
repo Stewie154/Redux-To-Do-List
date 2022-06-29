@@ -32,8 +32,8 @@ export default (state = initialState, action) => {
 		case CREATE_TODO:
 			return [...state, action.payload]
 		case DELETE_TODO:
-			// let newToDos = state.filter(action.payload => )
-			return [...state, action.payload]
+			let newToDos = state.filter(item => item.id !== action.payload)
+			return [...newToDos]
 		default:
 			return state   
 	}
