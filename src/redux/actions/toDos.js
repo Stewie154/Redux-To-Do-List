@@ -2,7 +2,7 @@ import {
     FETCH_ALL_TODOS,
     FETCH_TODO,
     CREATE_TODO,
-    EDIT_TODO,
+    TOGGLE_TODO,
     DELETE_TODO
 } from './types'
 
@@ -20,10 +20,10 @@ export const createToDo = (toDo) => {
     }
 }
 
-export const editToDo = (toDo) => {
+export const toggleToDo = (id) => {
     return {
-        type: CREATE_TODO,
-        payload: toDo
+        type: TOGGLE_TODO,
+        payload: id
     }
 }
 

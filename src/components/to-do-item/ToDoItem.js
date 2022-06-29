@@ -10,6 +10,10 @@ const ToDoItem = ({ item }) => {
         dispatch(deleteToDo(id))
     }
 
+    const toggleComplete = (id) => {
+        
+    }
+
 	return (
 	<div className="flex justify-between items-center py-2">
 		<p className={`text-lg md:text-2xl ${item.completed && 'line-through opacity-20'}`}>{item.title}</p>
