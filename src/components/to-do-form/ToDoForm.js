@@ -25,7 +25,7 @@ const ToDoForm = () => {
 
 	useEffect(() => {
 		textInput.current.focus()
-	}, [])
+	}, [userName])
 
 	return (
 		<form 
