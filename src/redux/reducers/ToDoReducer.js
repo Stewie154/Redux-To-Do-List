@@ -5,21 +5,7 @@ import {
 } from '../actions/types'
 
 let initialState = [
-	{
-		id: 0,
-		title: 'Clean the bathroom',
-		completed: false
-	},
-	{
-		id: 1,
-		title: 'Make dinner',
-		completed: true
-	},
-	{
-		id: 2,
-		title: 'Practice redux',
-		completed: false
-	}
+	
 ]    
 	
 
@@ -35,7 +21,6 @@ export default (state = initialState, action) => {
                 }
                 return item
             })
-            console.log(editedToDos)
 			return editedToDos
 		case DELETE_TODO:
 			let newToDos = state.filter(item => item.id !== action.payload)
