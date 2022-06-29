@@ -29,7 +29,7 @@ const EnterNameModal = () => {
 			className="container-background-color text-5xl py-5 focus:outline-0"
 			type="text" 
 			onChange={(event) => handleChange(event)}
-			placeholder="Enter your name..."
+			placeholder="Enter your first name..."
 			ref={textInput}
 		/>
 	</form>
