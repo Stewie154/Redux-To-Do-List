@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteToDo } from '../../redux/actions/toDos'
+import { deleteToDo, toggleToDo } from '../../redux/actions/toDos'
 
 
 const ToDoItem = ({ item }) => {
@@ -11,7 +11,7 @@ const ToDoItem = ({ item }) => {
     }
 
     const toggleComplete = (id) => {
-        
+        dispatch(toggleToDo(id))
     }
 
 	return (
@@ -22,6 +22,7 @@ const ToDoItem = ({ item }) => {
 				src="/images/icons/checkmark-circle-outline.svg" 
 				alt="check icon"
 				className="w-6 md:w-8 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
+                onClick={() => toggleComplete(item.id)}
 			/>
 			<img 
 				src="/images/icons/trash-outline.svg" 
