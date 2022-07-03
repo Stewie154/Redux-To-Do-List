@@ -7,9 +7,10 @@ import Fade from 'react-reveal/Fade';
 
 const Header = () => {
 	const userName = useSelector(state => state.userName)
+    const dispatch = useDispatch()
 
     const openModal = () => {
-        console.log('function here')
+        dispatch(setUserName(''))
     }
 
     const header = (
