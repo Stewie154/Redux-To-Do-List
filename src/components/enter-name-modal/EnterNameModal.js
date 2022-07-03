@@ -28,7 +28,7 @@ const EnterNameModal = () => {
 	return (
 	<form className="absolute top-0 left-0 flex justify-center items-center rounded-lg border border-color-secondary h-full w-full" onSubmit={(e) => handleSubmit(e, nameDisplay)}>
 		<input 
-			className="max-w-full container-background-color text-3xl md:text-5xl py-5 focus:outline-0"
+			className="max-w-full px-3 md:px-0 container-background-color text-3xl md:text-5xl py-5 focus:outline-0"
 			type="text" 
 			onChange={(event) => handleChange(event)}
 			placeholder="Enter your first name..."
