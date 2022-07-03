@@ -16,7 +16,7 @@ const ToDoForm = () => {
 
 	const handleSubmit = (event, currentText) => {
 		event.preventDefault()
-		if (currentText != '') {
+		if (currentText !== '') {
 			let newToDoItem = { id: Date.now(), title: currentText, completed: false }
 			dispatch(createToDo(newToDoItem))
 			dispatch(updateText(''))

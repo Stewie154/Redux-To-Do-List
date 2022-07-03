@@ -1,11 +1,10 @@
 import React, { useEffect, useRef } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { setUserName } from '../../redux/actions/user'
 
 
 const EnterNameModal = () => {
 	const dispatch = useDispatch()
-	const userName = useSelector(state => state.userName)
 	const textInput = useRef(null)
 
 
@@ -17,7 +16,7 @@ const EnterNameModal = () => {
 
 	const handleSubmit = (event, userName) => {
         event.preventDefault()
-        if (userName != '') {
+        if (userName !== '') {
             dispatch(setUserName(userName))
         }
 	}
