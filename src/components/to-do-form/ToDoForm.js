@@ -32,7 +32,7 @@ const ToDoForm = () => {
 			dispatch(createToDo(newToDoItem))
 			dispatch(updateText(''))
 		}
-		else {
+		else if (currentText !== '') {
 			let data = {
 				updatedText: currentText,
 				selectedToDo: selectedToDo
