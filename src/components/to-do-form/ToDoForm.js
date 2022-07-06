@@ -20,6 +20,8 @@ const ToDoForm = () => {
 	const handleEditText = (selectedToDo) => {
 		if (selectedToDo !== null) {
 			dispatch(updateText(selectedToDo.title))
+			textInput.current.focus()
+
 		}
 	}
 
