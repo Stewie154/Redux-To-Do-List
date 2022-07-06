@@ -3,6 +3,9 @@
 A to-do list application created with react and redux. This was great practice for me, allowing me to apply my redux knowledge outside of courses I've been doing. .\
 All of the state is handled by redux, and it makes use of redux-persist to save the state to local storage, allowing users to access their to-do list after page refreshes. 
 
+## first time set up
+`npm install --force`
+
 ## Available Scripts
 
 In the project directory, you can run:
