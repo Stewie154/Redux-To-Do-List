@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteToDo, toggleToDo } from '../../redux/actions/toDos'
+import { deleteToDo, editToDo, toggleToDo } from '../../redux/actions/toDos'
 import Fade from 'react-reveal/Fade';
 
 
@@ -16,12 +16,18 @@ const ToDoItem = ({ item }) => {
 		dispatch(toggleToDo(id))
 	}
 
+	const editToDo = (toDo) => {
+		console.log(toDo)
+	}
+
 	let icon = item.completed ? '/images/icons/arrow-undo-outline.svg' : '/images/icons/checkmark-circle-outline.svg'
 
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
-				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl ${item.completed && 'line-through opacity-20'}`}>{item.title}</p>
+				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl ${item.completed && 'line-through opacity-20'}`} onClick={() => editToDo(item)}>
+					{item.title}
+				</p>
 				<div className="flex">
 					<img
 						src={icon}
