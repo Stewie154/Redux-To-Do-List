@@ -33,8 +33,7 @@ const ToDoForm = () => {
 
 	useEffect(() => {
 		textInput.current.focus()
-		handleEditText(selectedToDo)
-	}, [userName, selectedToDo])
+	}, [userName])
 
 	useEffect(() => {
 		handleEditText(selectedToDo)
