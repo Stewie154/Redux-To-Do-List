@@ -18,7 +18,9 @@ const ToDoItem = ({ item }) => {
 	}
 
 	const editToDo = (toDo) => {
-		dispatch(selectToDo(toDo))
+		if (toDo.completed === false) {
+			dispatch(selectToDo(toDo))
+		}
 	}
 
 	let icon = item.completed ? '/images/icons/arrow-undo-outline.svg' : '/images/icons/checkmark-circle-outline.svg'
