@@ -1,6 +1,6 @@
 import { SELECT_TODO, DESELECT_TODO } from '../actions/types'
 
-export default (state, action) => {
+export default (state = null, action) => {
 	switch (action.type) {
 		case SELECT_TODO:
 			state = action.payload
