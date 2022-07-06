@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteToDo, editToDo, toggleToDo } from '../../redux/actions/toDos'
+import { selectToDo } from '../../redux/actions/selectedToDo'
 import Fade from 'react-reveal/Fade';
 
 
@@ -17,7 +18,7 @@ const ToDoItem = ({ item }) => {
 	}
 
 	const editToDo = (toDo) => {
-		console.log(toDo)
+		dispatch(selectToDo(toDo))
 	}
 
 	let icon = item.completed ? '/images/icons/arrow-undo-outline.svg' : '/images/icons/checkmark-circle-outline.svg'
