@@ -26,9 +26,9 @@ export const deleteToDo = (id) => {
 	}
 }
 
-export const editToDo = (id) => {
+export const editToDo = (dataObject) => {
 	return {
 		type: EDIT_TODO,
-		payload: id
+		payload: dataObject
 	}
 }

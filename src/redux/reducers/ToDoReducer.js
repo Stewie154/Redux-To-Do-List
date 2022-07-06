@@ -26,6 +26,15 @@ export default (state = initialState, action) => {
 		case DELETE_TODO:
 			let newToDos = state.filter(item => item.id !== action.payload)
 			return newToDos
+		case EDIT_TODO:
+			let updatedTextToDos = state.map(item => {
+				if (item.id === action.payload.selectedToDo.id) {
+					item.title = action.payload.updatedText
+					return item
+				}
+				return item
+			})
+			return updatedTextToDos
 		default:
 			return state
 	}

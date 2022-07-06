@@ -1,7 +1,8 @@
 import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/toDoForm'
-import { createToDo } from '../../redux/actions/toDos'
+import { createToDo, editToDo } from '../../redux/actions/toDos'
+import { deselectToDo } from '../../redux/actions/selectedToDo'
 
 const ToDoForm = () => {
 	const currentText = useSelector(state => state.currentText)
@@ -22,11 +23,20 @@ const ToDoForm = () => {
 		}
 	}
 
-	const handleSubmit = (event, currentText) => {
+	const handleSubmit = (event, currentText, selectedToDo) => {
 		event.preventDefault()
-		if (currentText !== '') {
+		if (currentText !== '' & selectedToDo === null) {
 			let newToDoItem = { id: Date.now(), title: currentText, completed: false }
 			dispatch(createToDo(newToDoItem))
+			dispatch(updateText(''))
+		}
+		else {
+			let data = {
+				updatedText: currentText,
+				selectedToDo: selectedToDo
+			}
+			dispatch(editToDo(data))
+			dispatch(deselectToDo())
 			dispatch(updateText(''))
 		}
 	}
@@ -42,7 +52,7 @@ const ToDoForm = () => {
 	return (
 		<form
 			className={`${userName === '' && 'hidden'} absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
-			onSubmit={(event) => handleSubmit(event, currentText)}
+			onSubmit={(event) => handleSubmit(event, currentText, selectedToDo)}
 		>
 			<input
 				type="text"
