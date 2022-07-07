@@ -2,7 +2,8 @@ import {
 	CREATE_TODO,
 	TOGGLE_TODO,
 	DELETE_TODO,
-	EDIT_TODO
+	EDIT_TODO,
+	CLEAR_ALL_TODOS
 } from '../actions/types'
 
 let initialState = [
@@ -35,6 +36,8 @@ export default (state = initialState, action) => {
 				return item
 			})
 			return updatedTextToDos
+		case CLEAR_ALL_TODOS:
+			return state = []
 		default:
 			return state
 	}

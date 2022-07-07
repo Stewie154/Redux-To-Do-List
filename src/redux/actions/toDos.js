@@ -2,7 +2,8 @@ import {
 	CREATE_TODO,
 	TOGGLE_TODO,
 	DELETE_TODO,
-	EDIT_TODO
+	EDIT_TODO,
+	CLEAR_ALL_TODOS
 } from './types'
 
 export const createToDo = (toDo) => {
@@ -30,5 +31,11 @@ export const editToDo = (dataObject) => {
 	return {
 		type: EDIT_TODO,
 		payload: dataObject
+	}
+}
+
+export const clearAllToDos = () => {
+	return {
+		type: CLEAR_ALL_TODOS
 	}
 }
