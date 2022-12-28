@@ -1,6 +1,5 @@
 import React from 'react'
 import EnterNameModal from '../enter-name-modal/EnterNameModal'
-import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 import { setUserName } from '../../redux/actions/user'
 import { useSelector, useDispatch } from 'react-redux'
 import Fade from 'react-reveal/Fade';

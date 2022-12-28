@@ -4,6 +4,7 @@ import { clearAllToDos } from '../../redux/actions/toDos'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
 
 import ToDoItem from '../to-do-item/ToDoItem'
+import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 
 const ToDoList = () => {
 	const dispatch = useDispatch()
@@ -29,17 +30,24 @@ const ToDoList = () => {
 			</p>
 	)
 
-	const renderList = allToDos.map((item, key) => {
-		return (
-			<ToDoItem item={item} key={key}/>
-		)
-	})
+	const renderContent = () => {
+		if (clearAllModalOpen) {
+			return <ClearToDosModal />
+		}
+		else {
+			 return allToDos.map((item, key) => {
+				return (
+					<ToDoItem item={item} key={key}/>
+				)
+			})
+		}
+	}
 	
 
 	return (
-		<div className={`h-[60%] overflow-scroll ${(userName === '' || clearAllModalOpen) && 'hidden'}`}>
+		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
 			{renderClearButton}
-			{renderList}
+			{renderContent()}
 		</div>
 	)
 }
