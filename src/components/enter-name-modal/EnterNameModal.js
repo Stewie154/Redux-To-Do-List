@@ -26,7 +26,7 @@ const EnterNameModal = () => {
 	}, [])
 
 	return (
-	<form className="absolute top-0 left-0 flex flex-col justify-center items-center rounded-lg border border-color-secondary h-full w-full" onSubmit={(e) => handleSubmit(e, nameDisplay)}>
+	<form className="absolute top-0 left-0 flex flex-col justify-center items-center rounded-lg h-full w-full" onSubmit={(e) => handleSubmit(e, nameDisplay)}>
 		<input 
 			className="max-w-full px-3 md:px-0 mb-10 container-background-color text-center text-3xl md:text-5xl py-5 focus:outline-0"
 			type="text" 
