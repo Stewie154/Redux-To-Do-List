@@ -13,7 +13,3 @@ export const UPDATE_TEXT = 'UPDATE_TEXT'
 // User action types 
 export const SET_USERNAME = 'SET_USERNAME'
 
-// Modal action types
-
-export const TOGGLE_CLEAR_TO_DOS_MODAL = 'TOGGLE_CLEAR_TO_DOS_MODAL'
-
