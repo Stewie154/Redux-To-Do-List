@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { clearAllToDos } from '../../redux/actions/toDos'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
 
 import ToDoItem from '../to-do-item/ToDoItem'
@@ -11,10 +10,6 @@ const ToDoList = () => {
 	const allToDos = useSelector(state => state.toDos)
 	const userName = useSelector(state => state.userName)
 	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
-
-	const handleClearToDos = () => {
-		dispatch(clearAllToDos())
-	}
 
 	const handleToggleClearAllModal = () => {
 		dispatch(toggleToDosModal())
