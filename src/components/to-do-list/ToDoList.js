@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { clearAllToDos } from '../../redux/actions/toDos'
 
 import ToDoItem from '../to-do-item/ToDoItem'
+// import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 
 const ToDoList = () => {
 	const dispatch = useDispatch()
