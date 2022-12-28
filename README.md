@@ -63,6 +63,7 @@ To do list to be generated with create-react-app and state to be managed with re
 
 
 ## first time set up
+`nvm use 14`
 `npm install --force`
 
 ### Deployment
