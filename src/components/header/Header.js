@@ -15,7 +15,7 @@ const Header = () => {
 
 	const header = (
 		<Fade>
-			<h1 className="py-5 text-lg text-left underline cursor-pointer hover:text-xl header-hover transition-all" onClick={openModal}>
+			<h1 className="w-fit py-5 text-lg text-left underline cursor-pointer hover:text-xl header-hover transition-all" onClick={openModal}>
 				{userName}'s list application
 			</h1>
 		</Fade>

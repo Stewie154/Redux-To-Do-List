@@ -18,7 +18,7 @@ const ToDoList = () => {
 	const renderClearButton = (
 		allToDos.length > 0 && 
 			<p 
-				className="w-fit ml-auto pb-2.5 underline italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50"
+				className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
 				onClick={() => handleToggleClearAllModal()}
 			>
 				Clear To-do list
