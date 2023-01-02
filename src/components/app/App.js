@@ -15,6 +15,7 @@ const App = () => {
 			<Fade top duration={750}>
 				<main className="flex flex-col relative container-background-color w-[750px] max-w-[90%] h-[700px] max-h-[95vh] px-5 md:px-10 mx-auto border border-color-secondary rounded-lg text-center">
 					<Header />
+					{/* when state is ready, use ternary to render AllLists when no list is selected  */}
 					<AllLists />
 					<SelectedList />
 				</main>
