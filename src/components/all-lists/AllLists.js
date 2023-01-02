@@ -6,18 +6,20 @@ import ListItem from '../list-item/ListItem'
 const AllLists = () => {
 
 	const dispatch = useDispatch()
+	const userName = useSelector(state => state.userName)
 
 	const lists = useSelector(state => state.lists)
 
 	const renderContent = () => {
-		return lists.map(list => {
-			return (
-				<ListItem title={list.title} id={list.id} />
-			)
-		})
+		if (userName !== '') {
+			return lists.map(list => {
+				return (
+					<ListItem key={list.id} title={list.title} id={list.id} />
+				)
+			})
+		}
 	}
 
-	console.log(lists)
 	return (
 		<>
 			<Header />

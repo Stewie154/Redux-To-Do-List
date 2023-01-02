@@ -20,7 +20,7 @@ let initialState = [
 		]
 	},
 	{
-		id: 1, 
+		id: 3, 
 		title: 'Example List 3',
 		selected: false,
 		items: [
