@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteToDo, editToDo, toggleToDo } from '../../redux/actions/toDos'
+import { deleteToDo, toggleToDo } from '../../redux/actions/toDos'
 import { selectToDo } from '../../redux/actions/selectedToDo'
 import Fade from 'react-reveal/Fade';
 
