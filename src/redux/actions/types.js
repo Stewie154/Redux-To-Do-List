@@ -1,3 +1,10 @@
+// Lists action types
+export const CREATE_LIST = 'CREATE_LIST'
+export const DELETE_LIST = 'DELETE_LIST'
+export const EDIT_LIST = 'EDIT_LIST'
+export const CLEAR_ALL_LISTS = 'CLEAR_ALL_LISTS'
+export const SELECT_LIST = 'SELECT_LIST'
+
 // To do action types 
 export const CREATE_TODO = 'CREATE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'
@@ -14,6 +21,5 @@ export const UPDATE_TEXT = 'UPDATE_TEXT'
 export const SET_USERNAME = 'SET_USERNAME'
 
 // Modal action types
-
 export const TOGGLE_CLEAR_TO_DOS_MODAL = 'TOGGLE_CLEAR_TO_DOS_MODAL'
 
