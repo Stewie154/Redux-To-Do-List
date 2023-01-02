@@ -5,7 +5,7 @@ import Fade from 'react-reveal/Fade';
 
 
 import Header from '../header/Header'
-import ToDoList from '../to-do-list/ToDoList'
+import SelectedList from '../selected-list/SelectedList'
 import AllLists from '../all-lists/AllLists';
 
 
@@ -16,7 +16,7 @@ const App = () => {
 				<main className="flex flex-col relative container-background-color w-[750px] max-w-[90%] h-[700px] max-h-[95vh] px-5 md:px-10 mx-auto border border-color-secondary rounded-lg text-center">
 					<Header />
 					<AllLists />
-					<ToDoList />
+					<SelectedList />
 				</main>
 			</Fade>
 		</div>

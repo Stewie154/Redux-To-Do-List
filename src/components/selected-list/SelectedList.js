@@ -6,7 +6,7 @@ import ToDoItem from '../to-do-item/ToDoItem'
 import ToDoForm from '../to-do-form/ToDoForm'
 import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 
-const ToDoList = () => {
+const SelectedList = () => {
 	const dispatch = useDispatch()
 	const allToDos = useSelector(state => state.toDos)
 	const userName = useSelector(state => state.userName)
@@ -49,4 +49,4 @@ const ToDoList = () => {
 	)
 }
 
-export default ToDoList
+export default SelectedList
