@@ -2,7 +2,7 @@ import {
 	CREATE_LIST
 } from '../actions/types'
 
-initialState = [
+let initialState = [
 	{
 		id: 1, 
 		title: 'Example List 1',
