@@ -8,12 +8,18 @@ const AllLists = () => {
 
 	const lists = useSelector(state => state.lists)
 
+	const renderContent = () => {
+		return lists.map(list => {
+			return (
+				<ListItem title={list.title} id={list.id} />
+			)
+		})
+	}
+
 	console.log(lists)
 	return (
 		<div>All Lists component here:
-			<ListItem title="list item here" id={1}/>
-			<ListItem title="list item here" id={2}/>
-			<ListItem title="list item here" id={3}/>
+			{renderContent()}
 		</div>
 	)
 }
