@@ -61,6 +61,14 @@ To do list to be generated with create-react-app and state to be managed with re
 * Step 5:
 	* Store all data in local storage so to dos are still there after a page load (redux-persist)
 
+* Step 6:
+	* Create component for clear-to-dos modal
+	* Add state to redux store for clearAllModalOpen
+	* render component when state is clearAllModalOpen true
+	* set clearAllModalOpen to true on 'Clear To-Do List' text click
+	* Clear todos from store when 'yes' is clicked in modal, then toggle clearAllModalOpen
+	* Close modal and keep don't clear to dos on modal 'no' button click
+
 
 ## first time set up
 `nvm use 14`
