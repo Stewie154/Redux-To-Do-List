@@ -69,8 +69,10 @@ To do list to be generated with create-react-app and state to be managed with re
 	* Clear todos from store when 'yes' is clicked in modal, then toggle clearAllModalOpen
 	* Close modal and keep don't clear to dos on modal 'no' button click
 
-* Step 7: 
-	* Create a component to display a list of to do lists (hard - coded html)
+* Step 7 (refactor to add multiple lists feature): 
+	* Create AllListsComponent to display a list of to do lists (hard - coded html)
+		* Adjust styles of current Header component for a smaller username in top left of container, change text to something more suitable eg (from 'list' to 'task app')
+		* Under Header component display AllListsComponent
 		* Need to display Create list button (like current 'add task' button)
 		* add placeholder of 'enter list title eg "shopping"'
 		* Create list button adds item to lists with pre entered name
@@ -84,6 +86,7 @@ To do list to be generated with create-react-app and state to be managed with re
 			* selected (boolean)
 			* items (array of current to do items)
 	* Display pre built component with data from redux store
+		* create necessary actions & reducers for all lists 
 	* Add state to redux store for selected list
 	* Add 'back / all lists' button opposite 'Clear To-Do list' button
 	* Clicking the 'back / all lists' button to take user back to list of lists (deselect selected list)
