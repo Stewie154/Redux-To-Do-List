@@ -11,7 +11,7 @@ const ListItem = ({ title, id }) => {
 				</p>
 				<div className="flex">
 					<img
-						src="/images/icons/trash-outline.svg"
+						src="/images/icons/pencil.svg"
 						alt="check icon"
 						className="w-6 md:w-8 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
 						onClick={() => console.log(id)}
