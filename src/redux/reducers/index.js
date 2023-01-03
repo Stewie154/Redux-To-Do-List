@@ -18,5 +18,5 @@ export default combineReducers({
 	currentTaskText: toDoFormReducer,
 	selectedToDo: selectedToDoReducer,
 	clearAllModalOpen: clearToDosModalReducer,
-	listsModalOpen: listsModalReducer
+	listsModalInfo: listsModalReducer
 })

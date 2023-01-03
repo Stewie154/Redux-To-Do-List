@@ -12,7 +12,7 @@ const ListItem = ({ title, id }) => {
 	const dispatch = useDispatch()
 
 	const handleDeleteClick = (id) => {
-		dispatch(toggleListsModal())
+		dispatch(toggleListsModal(id))
 		// dispatch(deleteList(id))
 	}
 

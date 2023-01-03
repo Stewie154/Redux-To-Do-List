@@ -8,7 +8,7 @@ import AllListsModal from '../all-lists-modal/AllListsModal'
 const AllLists = () => {
 	const dispatch = useDispatch()
 	const userName = useSelector(state => state.userName)
-	const listsModalOpen = useSelector(state => state.listsModalOpen)
+	const listsModalOpen = useSelector(state => state.listsModalInfo.modalOpen)
 
 	const lists = useSelector(state => state.lists)
 
