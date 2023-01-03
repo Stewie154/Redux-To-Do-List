@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Header from '../header/Header'
 import ListItem from '../list-item/ListItem'
 import CreateListForm from '../create-list-form/CreateListForm'
+import AllListsModal from '../all-lists-modal/AllListsModal'
 
 const AllLists = () => {
 
@@ -28,6 +29,7 @@ const AllLists = () => {
 				{renderContent()}
 			</main>
 			<CreateListForm />
+			<AllListsModal />
 		</>
 	)
 }
