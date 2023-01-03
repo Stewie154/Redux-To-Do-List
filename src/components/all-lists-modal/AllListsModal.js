@@ -1,12 +1,15 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleListsModal } from '../../redux/actions/listsModal'
+import { deleteList } from '../../redux/actions/lists'
 
 const AllListsModal = () => {
 	const dispatch = useDispatch()
 	const clickedItemId = useSelector(state => state.listsModalInfo.clickedListId)
+
 	const handleYesClick = () => {
-		console.log('Yes!')
+		dispatch(deleteList(clickedItemId))
+		dispatch(toggleListsModal())
 	}
 
 	const handleNoClick = () => {
