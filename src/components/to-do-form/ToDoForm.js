@@ -5,7 +5,7 @@ import { createToDo, editToDo } from '../../redux/actions/toDos'
 import { deselectToDo } from '../../redux/actions/selectedToDo'
 
 const ToDoForm = () => {
-	const currentText = useSelector(state => state.currentText)
+	const currentTaskText = useSelector(state => state.currentTaskText)
 	const userName = useSelector(state => state.userName)
 	const selectedToDo = useSelector(state => state.selectedToDo)
 
@@ -25,16 +25,16 @@ const ToDoForm = () => {
 		}
 	}
 
-	const handleSubmit = (event, currentText, selectedToDo) => {
+	const handleSubmit = (event, currentTaskText, selectedToDo) => {
 		event.preventDefault()
-		if (currentText !== '' & selectedToDo === null) {
-			let newToDoItem = { id: Date.now(), title: currentText, completed: false }
+		if (currentTaskText !== '' & selectedToDo === null) {
+			let newToDoItem = { id: Date.now(), title: currentTaskText, completed: false }
 			dispatch(createToDo(newToDoItem))
 			dispatch(updateText(''))
 		}
-		else if (currentText !== '') {
+		else if (currentTaskText !== '') {
 			let data = {
-				updatedText: currentText,
+				updatedText: currentTaskText,
 				selectedToDo: selectedToDo
 			}
 			dispatch(editToDo(data))
@@ -54,11 +54,11 @@ const ToDoForm = () => {
 	return (
 		<form
 			className={`${userName === '' && 'hidden'} absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
-			onSubmit={(event) => handleSubmit(event, currentText, selectedToDo)}
+			onSubmit={(event) => handleSubmit(event, currentTaskText, selectedToDo)}
 		>
 			<input
 				type="text"
-				value={currentText}
+				value={currentTaskText}
 				placeholder="Enter to do task..."
 				className="w-9/12 bg-transparent border-0 text-lg md:text-2xl focus:outline-0"
 				onChange={(e) => { handleChange(e.target.value) }}
