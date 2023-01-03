@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Header from '../header/Header'
 import ListItem from '../list-item/ListItem'
+import CreateListForm from '../create-list-form/CreateListForm'
 
 const AllLists = () => {
 
@@ -24,6 +25,7 @@ const AllLists = () => {
 		<>
 			<Header />
 			{renderContent()}
+			<CreateListForm />
 		</>
 	)
 }
