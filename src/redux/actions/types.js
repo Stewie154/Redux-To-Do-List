@@ -1,6 +1,7 @@
 // Lists action types
 export const CREATE_LIST = 'CREATE_LIST'
 export const DELETE_LIST = 'DELETE_LIST'
+export const DELETE_ALL_LISTS = 'DELETE_ALL_LISTS'
 export const EDIT_LIST = 'EDIT_LIST'
 export const CLEAR_ALL_LISTS = 'CLEAR_ALL_LISTS'
 export const SELECT_LIST = 'SELECT_LIST'
