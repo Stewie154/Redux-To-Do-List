@@ -24,7 +24,9 @@ const AllLists = () => {
 	return (
 		<>
 			<Header />
-			{renderContent()}
+			<main className="h-[60%] overflow-scroll">
+				{renderContent()}
+			</main>
 			<CreateListForm />
 		</>
 	)
