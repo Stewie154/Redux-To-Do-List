@@ -1,6 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/createListForm'
+import { createList } from '../../redux/actions/lists'
 
 const CreateListForm = () => {
 	const dispatch = useDispatch()
@@ -15,11 +16,24 @@ const CreateListForm = () => {
 	const handleChange = (textValue) => {
 		dispatch(updateText(textValue))
 	}
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		if (currentListTitle !== '') {
+			let newList = { 
+				id: Date.now(), 
+				title: currentListTitle, 
+				selected: false, 
+				items: []
+			}
+			dispatch(createList(newList))
+			dispatch(updateText(''))
+		}
+	}
 
 	return (
 		<form
 			className={`absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
-			onSubmit={(event) => console.log(event)}
+			onSubmit={(event) => handleSubmit(event)}
 		>
 			<input
 				type="text"
