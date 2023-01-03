@@ -1,8 +1,19 @@
 import React from 'react'
 import Fade from 'react-reveal/Fade';
 
+import { useDispatch } from 'react-redux'
+
+import { deleteList } from '../../redux/actions/lists'
+
 
 const ListItem = ({ title, id }) => {
+
+	const dispatch = useDispatch()
+
+	const handleDeleteClick = (id) => {
+		dispatch(deleteList(id))
+	}
+
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
@@ -20,7 +31,7 @@ const ListItem = ({ title, id }) => {
 						src="/images/icons/trash-outline.svg"
 						alt="trash icon"
 						className="w-6 md:w-8 cursor-pointer transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
-						onClick={() => console.log(id)}
+						onClick={() => handleDeleteClick(id)}
 					/>
 				</div>
 			</div>
