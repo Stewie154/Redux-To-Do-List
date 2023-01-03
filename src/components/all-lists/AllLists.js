@@ -6,7 +6,6 @@ import CreateListForm from '../create-list-form/CreateListForm'
 import AllListsModal from '../all-lists-modal/AllListsModal'
 
 const AllLists = () => {
-
 	const dispatch = useDispatch()
 	const userName = useSelector(state => state.userName)
 

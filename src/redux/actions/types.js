@@ -26,4 +26,6 @@ export const SET_USERNAME = 'SET_USERNAME'
 
 // Modal action types
 export const TOGGLE_CLEAR_TO_DOS_MODAL = 'TOGGLE_CLEAR_TO_DOS_MODAL'
+export const TOGGLE_LISTS_MODAL = 'TOGGLE_LISTS_MODAL'
+
 
