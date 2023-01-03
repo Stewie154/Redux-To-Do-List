@@ -8,8 +8,10 @@ const AllListsModal = () => {
 	const clickedItemId = useSelector(state => state.listsModalInfo.clickedListId)
 
 	const handleYesClick = () => {
-		dispatch(deleteList(clickedItemId))
-		dispatch(toggleListsModal())
+		if (clickedItemId !== null) {
+			dispatch(deleteList(clickedItemId))
+			dispatch(toggleListsModal())
+		}
 	}
 
 	const handleNoClick = () => {
