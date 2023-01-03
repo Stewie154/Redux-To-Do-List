@@ -6,6 +6,7 @@ import { createList } from '../../redux/actions/lists'
 const CreateListForm = () => {
 	const dispatch = useDispatch()
 	const currentListTitle = useSelector(state => state.currentListTitle)
+	const userName = useSelector(state => state.userName)
 
 	const textInput = useRef(null)
 
@@ -32,7 +33,7 @@ const CreateListForm = () => {
 
 	return (
 		<form
-			className={`absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
+			className={`${userName === '' ? 'hidden' : 'absolute'} bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
 			onSubmit={(event) => handleSubmit(event)}
 		>
 			<input
