@@ -18,7 +18,7 @@ const AllListsModal = () => {
 		dispatch(toggleListsModal())
 	}
 
-	const text = clickedItemId === null ? 'Are you sure you want to delete all lists and all of their contents?' : 'Are you sure you want to clear this list?'
+	const text = clickedItemId === null ? 'Are you sure you want to delete all lists and all of their contents?' : 'Are you sure you want to delete this list and all of it\'s contents?'
 
 	return (
 		<div className="modal-background-color absolute z-20 top-0 left-0 flex flex-col justify-center items-center rounded-lg border border-color-secondary h-full w-full">
