@@ -13,7 +13,7 @@ const AllListsModal = () => {
 	}
 
 	const handleNoClick = () => {
-		dispatch(toggleListsModal(null))
+		dispatch(toggleListsModal())
 	}
 	return (
 		<div className="modal-background-color absolute z-20 top-0 left-0 flex flex-col justify-center items-center rounded-lg border border-color-secondary h-full w-full">
