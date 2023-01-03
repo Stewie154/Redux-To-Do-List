@@ -18,6 +18,9 @@ export const DESELECT_TODO = 'DESELECT_TODO'
 // To do form action types
 export const UPDATE_TEXT = 'UPDATE_TEXT'
 
+// Create list form action types
+export const EDIT_LIST_NAME = 'EDIT_LIST_NAME'
+
 // User action types 
 export const SET_USERNAME = 'SET_USERNAME'
 
