@@ -12,6 +12,17 @@ const AllLists = () => {
 
 	const lists = useSelector(state => state.lists)
 
+	const renderClearButton = (
+		lists.length > 1 && 
+			<p 
+				className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
+				onClick={() => console.log('clear all clicked!')}
+			>
+				Clear all lists
+			</p>
+	)
+
+
 	const renderContent = () => {
 		if (userName !== '') {
 			return lists.map(list => {
@@ -26,6 +37,7 @@ const AllLists = () => {
 		<>
 			<Header />
 			<main className="h-[60%] overflow-scroll">
+				{renderClearButton}
 				{renderContent()}
 			</main>
 			<CreateListForm />
