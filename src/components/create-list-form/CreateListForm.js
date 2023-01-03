@@ -1,6 +1,10 @@
 import React, { useRef, useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { updateText } from '../../redux/actions/createListForm'
 
 const CreateListForm = () => {
+	const dispatch = useDispatch()
+	const currentListTitle = useSelector(state => state.currentListTitle)
 
 	const textInput = useRef(null)
 
@@ -9,7 +13,7 @@ const CreateListForm = () => {
 	}, [textInput])
 
 	const handleChange = (textValue) => {
-		console.log(textValue)
+		dispatch(updateText(textValue))
 	}
 
 	return (
@@ -19,7 +23,7 @@ const CreateListForm = () => {
 		>
 			<input
 				type="text"
-				value={''}
+				value={currentListTitle}
 				placeholder="Create a new list..."
 				className="w-9/12 bg-transparent border-0 text-lg md:text-2xl focus:outline-0"
 				onChange={(e) => { handleChange(e.target.value) }}
