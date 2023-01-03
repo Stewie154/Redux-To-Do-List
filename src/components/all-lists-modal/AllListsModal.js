@@ -1,13 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { toggleListsModal } from '../../redux/actions/listsModal'
 
 const AllListsModal = ({ modalType }) => {
-
+	const dispatch = useDispatch()
 	const handleYesClick = () => {
 		console.log('Yes!')
 	}
 
 	const handleNoClick = () => {
-		console.log('No!')
+		dispatch(toggleListsModal())
 	}
 	return (
 		<div className="modal-background-color absolute z-20 top-0 left-0 flex flex-col justify-center items-center rounded-lg border border-color-secondary h-full w-full">

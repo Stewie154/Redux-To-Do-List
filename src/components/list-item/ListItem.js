@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import { useDispatch } from 'react-redux'
 
 import { deleteList } from '../../redux/actions/lists'
+import { toggleListsModal } from '../../redux/actions/listsModal';
 
 
 const ListItem = ({ title, id }) => {
@@ -11,7 +12,8 @@ const ListItem = ({ title, id }) => {
 	const dispatch = useDispatch()
 
 	const handleDeleteClick = (id) => {
-		dispatch(deleteList(id))
+		dispatch(toggleListsModal())
+		// dispatch(deleteList(id))
 	}
 
 	return (
