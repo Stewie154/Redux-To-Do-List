@@ -23,14 +23,22 @@ const SelectedList = () => {
 		dispatch(deselectList())
 	}
 
-	const renderClearButton = (
-		listItems.length > 0 && 
-			<p 
-				className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
-				onClick={() => handleToggleClearAllModal()}
-			>
-				Clear To-do list
-			</p>
+	const renderBackAndClearButtons = (
+		<section className="flex justify-between items-center">
+			<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all" onClick={() => handleBackClick()}>
+				<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
+				<p>Back to my lists</p>
+			</div>
+			{
+				listItems.length > 0 && 
+				<p 
+					className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
+					onClick={() => handleToggleClearAllModal()}
+				>
+					Clear To-do list
+				</p>
+			}
+		</section>
 	)
 
 	const renderContent = () => {
@@ -52,13 +60,7 @@ const SelectedList = () => {
 	return (
 		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
 			<Header />
-			<section className="flex justify-between items-center">
-				<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all" onClick={() => handleBackClick()}>
-					<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
-					<p>Back to my lists</p>
-				</div>
-				{renderClearButton}
-			</section>
+			{renderBackAndClearButtons}
 			
 			{renderContent()}
 			<ToDoForm />
