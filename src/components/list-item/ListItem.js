@@ -17,7 +17,7 @@ const ListItem = ({ title, id }) => {
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
-				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl 'hover:opacity-80 cursor-pointer`} onClick={() => console.log(title)}>
+				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl hover:opacity-60 cursor-pointer`} onClick={() => console.log(title)}>
 					{title}
 				</p>
 				<div className="flex">
