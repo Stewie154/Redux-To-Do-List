@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
+import { deselectList } from '../../redux/actions/selectedList'
 
 import Header from '../header/Header'
 import ToDoItem from '../to-do-item/ToDoItem'
@@ -16,6 +17,10 @@ const SelectedList = () => {
 
 	const handleToggleClearAllModal = () => {
 		dispatch(toggleToDosModal())
+	}
+
+	const handleBackClick = () => {
+		dispatch(deselectList())
 	}
 
 	const renderClearButton = (
@@ -48,7 +53,7 @@ const SelectedList = () => {
 		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
 			<Header />
 			<section className="flex justify-between items-center">
-				<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all">
+				<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all" onClick={() => handleBackClick()}>
 					<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
 					<p>Back to my lists</p>
 				</div>
