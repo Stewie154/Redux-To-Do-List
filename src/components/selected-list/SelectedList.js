@@ -8,7 +8,8 @@ import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 
 const SelectedList = () => {
 	const dispatch = useDispatch()
-	const allToDos = useSelector(state => state.toDos)
+	const listTitle = useSelector(state => state.selectedList.title)
+	const listItems = useSelector(state => state.selectedList.items)
 	const userName = useSelector(state => state.userName)
 	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
 
@@ -17,7 +18,7 @@ const SelectedList = () => {
 	}
 
 	const renderClearButton = (
-		allToDos.length > 0 && 
+		listItems.length > 0 && 
 			<p 
 				className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
 				onClick={() => handleToggleClearAllModal()}
@@ -31,17 +32,20 @@ const SelectedList = () => {
 			return <ClearToDosModal />
 		}
 		else {
-			 return allToDos.map((item, key) => {
-				return (
-					<ToDoItem item={item} key={key}/>
-				)
-			})
+			if (listItems.length > 0) {
+				return listItems.map((item, key) => {
+					return (
+						<ToDoItem item={item} key={key}/>
+					)
+				})
+			}
 		}
 	}
 	
 
 	return (
 		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
+			{listTitle}
 			{renderClearButton}
 			{renderContent()}
 			<ToDoForm />
