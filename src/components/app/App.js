@@ -13,13 +13,13 @@ const App = () => {
 	const lists = useSelector(state => state.lists)
 
 	const listIsSelected = () => {
-		let listSelected = false
+		let isSelected = false
 		for (let i = 0; i < lists.length; i++ ) {
 			if (lists[i].selected === true) {
-				listIsSelected = true
+				isSelected = true
 			}
 		}
-		return listSelected
+		return isSelected
 	}
 
 	const renderContent = () => {
