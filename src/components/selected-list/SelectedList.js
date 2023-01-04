@@ -47,7 +47,14 @@ const SelectedList = () => {
 	return (
 		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
 			<Header />
-			{renderClearButton}
+			<section className="flex justify-between items-center">
+				<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all">
+					<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
+					<p>Back to my lists</p>
+				</div>
+				{renderClearButton}
+			</section>
+			
 			{renderContent()}
 			<ToDoForm />
 		</div>
