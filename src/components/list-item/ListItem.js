@@ -4,6 +4,7 @@ import Fade from 'react-reveal/Fade';
 import { useDispatch } from 'react-redux'
 
 import { toggleListsModal } from '../../redux/actions/listsModal';
+import { selectList } from '../../redux/actions/selectedList';
 
 
 const ListItem = ({ list }) => {
@@ -14,10 +15,14 @@ const ListItem = ({ list }) => {
 		dispatch(toggleListsModal(id))
 	}
 
+	const handleSelectList = (list) => {
+		dispatch(selectList(list))
+	}
+
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
-				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl hover:opacity-60 cursor-pointer`} onClick={() => console.log(list.title)}>
+				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl hover:opacity-60 cursor-pointer`} onClick={() => handleSelectList(list)}>
 					{list.title}
 				</p>
 				<div className="flex">

@@ -32,7 +32,7 @@ const AllLists = () => {
 		if (userName !== '') {
 			return lists.map(list => {
 				return (
-					<ListItem key={list.id} title={list.title} id={list.id} />
+					<ListItem key={list.id} list={list} />
 				)
 			})
 		}
