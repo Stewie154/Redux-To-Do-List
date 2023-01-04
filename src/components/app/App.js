@@ -6,24 +6,17 @@ import { useSelector } from 'react-redux';
 
 import SelectedList from '../selected-list/SelectedList'
 import AllLists from '../all-lists/AllLists';
+import { listIsSelected } from '../../utilities/functions'
 
 
 const App = () => {
 
 	const lists = useSelector(state => state.lists)
 
-	const listIsSelected = () => {
-		let isSelected = false
-		for (let i = 0; i < lists.length; i++ ) {
-			if (lists[i].selected === true) {
-				isSelected = true
-			}
-		}
-		return isSelected
-	}
+	const selectedList = listIsSelected(lists)
 
 	const renderContent = () => {
-		return listIsSelected() === true ? <SelectedList /> : <AllLists /> 
+		return selectedList === true ? <SelectedList /> : <AllLists />
 	}
 
 	return (
