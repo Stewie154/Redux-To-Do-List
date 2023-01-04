@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleListsModal } from '../../redux/actions/listsModal'
-import { deleteList } from '../../redux/actions/lists'
+import { deleteList, deleteAllLists } from '../../redux/actions/lists'
 
 const AllListsModal = () => {
 	const dispatch = useDispatch()
@@ -10,6 +10,10 @@ const AllListsModal = () => {
 	const handleYesClick = () => {
 		if (clickedItemId !== null) {
 			dispatch(deleteList(clickedItemId))
+			dispatch(toggleListsModal())
+		}
+		else {
+			dispatch(deleteAllLists())
 			dispatch(toggleListsModal())
 		}
 	}
