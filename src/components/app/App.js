@@ -9,10 +9,21 @@ import AllLists from '../all-lists/AllLists';
 
 
 const App = () => {
-	const selectedList = useSelector(state => state.selectedList)
+
+	const lists = useSelector(state => state.lists)
+
+	const listIsSelected = () => {
+		let listSelected = false
+		for (let i = 0; i < lists.length; i++ ) {
+			if (lists[i].selected === true) {
+				listIsSelected = true
+			}
+		}
+		return listSelected
+	}
 
 	const renderContent = () => {
-		return selectedList === null ? <AllLists /> : <SelectedList />
+		return listIsSelected() === true ? <SelectedList /> : <AllLists /> 
 	}
 
 	return (
