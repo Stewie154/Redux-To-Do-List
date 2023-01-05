@@ -10,13 +10,10 @@ import { listIsSelected } from '../../utilities/functions'
 
 
 const App = () => {
-
-	const lists = useSelector(state => state.lists)
-
-	const selectedList = listIsSelected(lists)
+	const selectedList = useSelector(state => state.selectedList)
 
 	const renderContent = () => {
-		return selectedList === true ? <SelectedList /> : <AllLists />
+		return selectedList === null ? <AllLists /> : <SelectedList />
 	}
 
 	return (

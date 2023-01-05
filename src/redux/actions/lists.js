@@ -1,4 +1,4 @@
-import { CREATE_LIST, DELETE_LIST, DELETE_ALL_LISTS, SELECT_LIST } from "./types";
+import { CREATE_LIST, DELETE_LIST, DELETE_ALL_LISTS } from "./types";
 
 export const createList = (list) => {
 	return {
@@ -17,12 +17,5 @@ export const deleteList = (listId) => {
 export const deleteAllLists = () => {
 	return {
 		type: DELETE_ALL_LISTS
-	}
-}
-
-export const selectList = (id) => {
-	return {
-		type: SELECT_LIST,
-		payload: id
 	}
 }
