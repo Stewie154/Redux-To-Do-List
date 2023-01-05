@@ -3,11 +3,9 @@ import { SELECT_LIST, DESELECT_LIST, CREATE_LIST_ITEM, DELETE_LIST_ITEM } from '
 export default (state = null, action) => {
 	switch (action.type) {
 		case SELECT_LIST:
-			state = action.payload
-			return state
+			return action.payload
 		case DESELECT_LIST:
-			state = null
-			return state
+			return null
 		case CREATE_LIST_ITEM:
 			return {...state, items: [...state.items, action.payload]}
 		case DELETE_LIST_ITEM:
