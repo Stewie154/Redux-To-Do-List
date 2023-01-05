@@ -9,11 +9,10 @@ export default (state = null, action) => {
 			state = null
 			return state
 		case CREATE_LIST_ITEM:
-			state.items = [...state.items, action.payload]
-			return state
+			return {...state, items: [...state.items, action.payload]}
 		case DELETE_LIST_ITEM:
-			state.items = state.items.filter(item => item.id !== action.payload)
-			return state
+			let updatedItems = state.items.filter(item => item.id !== action.payload)
+			return {...state, items: updatedItems}
 		default:
 			return state
 	}
