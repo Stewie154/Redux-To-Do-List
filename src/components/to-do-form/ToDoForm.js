@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/toDoForm'
 import { createToDo, editToDo } from '../../redux/actions/toDos'
+import { createListItem } from '../../redux/actions/selectedList'
 import { deselectToDo } from '../../redux/actions/selectedToDo'
 
 const ToDoForm = () => {
@@ -28,8 +29,8 @@ const ToDoForm = () => {
 	const handleSubmit = (event, currentTaskText, selectedToDo) => {
 		event.preventDefault()
 		if (currentTaskText !== '' & selectedToDo === null) {
-			let newToDoItem = { id: Date.now(), title: currentTaskText, completed: false }
-			dispatch(createToDo(newToDoItem))
+			let newListItem = { id: Date.now(), title: currentTaskText, completed: false }
+			dispatch(createListItem(newListItem))
 			dispatch(updateText(''))
 		}
 		else if (currentTaskText !== '') {

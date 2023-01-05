@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
-import { deselectList } from '../../redux/actions/selectedList'
+import { deselectList, } from '../../redux/actions/selectedList'
 
 import Header from '../header/Header'
 import ToDoItem from '../to-do-item/ToDoItem'
@@ -10,7 +10,6 @@ import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 
 const SelectedList = () => {
 	const dispatch = useDispatch()
-	const listTitle = useSelector(state => state.selectedList.title)
 	const listItems = useSelector(state => state.selectedList.items)
 	const userName = useSelector(state => state.userName)
 	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
@@ -61,7 +60,6 @@ const SelectedList = () => {
 		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
 			<Header />
 			{renderBackAndClearButtons}
-			
 			{renderContent()}
 			<ToDoForm />
 		</div>

@@ -1,4 +1,4 @@
-import { SELECT_LIST, DESELECT_LIST } from "./types"
+import { SELECT_LIST, DESELECT_LIST, CREATE_LIST_ITEM } from "./types"
 
 export const selectList = (list) => {
 	return {
@@ -10,5 +10,12 @@ export const selectList = (list) => {
 export const deselectList = () => {
 	return {
 		type: DESELECT_LIST
+	}
+}
+
+export const createListItem = (listItem) => {
+	return {
+		type: CREATE_LIST_ITEM,
+		payload: listItem
 	}
 }
