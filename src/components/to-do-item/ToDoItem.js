@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { deleteToDo, toggleToDo } from '../../redux/actions/toDos'
 import { selectToDo } from '../../redux/actions/selectedToDo'
-import { deleteListItem } from '../../redux/actions/selectedList'
+import { deleteListItem, toggleListItem } from '../../redux/actions/selectedList'
 import Fade from 'react-reveal/Fade';
 
 
@@ -15,7 +15,7 @@ const ToDoItem = ({ item }) => {
 	}
 
 	const toggleComplete = (id) => {
-		dispatch(toggleToDo(id))
+		dispatch(toggleListItem(id))
 	}
 
 	const editToDo = (toDo) => {

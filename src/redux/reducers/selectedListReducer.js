@@ -14,7 +14,7 @@ export default (state = null, action) => {
 		case TOGGLE_LIST_ITEM:
 			let toggled = state.items.map(item => {
 				if (item.id === action.payload) {
-					item.selected = !item.selected
+					item.completed = !item.completed
 					return item
 				}
 				else {
