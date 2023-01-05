@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 
 import SelectedList from '../selected-list/SelectedList'
 import AllLists from '../all-lists/AllLists';
-import { listIsSelected } from '../../utilities/functions'
 
 
 const App = () => {
