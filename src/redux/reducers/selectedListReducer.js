@@ -1,4 +1,4 @@
-import { SELECT_LIST, DESELECT_LIST, CREATE_LIST_ITEM } from '../actions/types'
+import { SELECT_LIST, DESELECT_LIST, CREATE_LIST_ITEM, DELETE_LIST_ITEM } from '../actions/types'
 
 export default (state = null, action) => {
 	switch (action.type) {
@@ -10,6 +10,9 @@ export default (state = null, action) => {
 			return state
 		case CREATE_LIST_ITEM:
 			state.items = [...state.items, action.payload]
+			return state
+		case DELETE_LIST_ITEM:
+			state.items = state.items.filter(item => item.id !== action.payload)
 			return state
 		default:
 			return state
