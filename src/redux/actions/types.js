@@ -5,10 +5,11 @@ export const DELETE_ALL_LISTS = 'DELETE_ALL_LISTS'
 export const EDIT_LIST = 'EDIT_LIST'
 export const CLEAR_ALL_LISTS = 'CLEAR_ALL_LISTS'
 export const SELECT_LIST = 'SELECT_LIST'
-export const DESELECT_LIST = 'DESELECT_LIST'
 
 // Selected List action types
 export const CREATE_LIST_ITEM = 'CREATE_LIST_ITEM'
+export const DELETE_LIST_ITEM = 'DELETE_LIST_ITEM'
+export const DESELECT_LIST = 'DESELECT_LIST'
 
 // To do action types 
 export const CREATE_TODO = 'CREATE_TODO'
