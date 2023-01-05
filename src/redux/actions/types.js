@@ -9,6 +9,7 @@ export const SELECT_LIST = 'SELECT_LIST'
 // Selected List action types
 export const CREATE_LIST_ITEM = 'CREATE_LIST_ITEM'
 export const DELETE_LIST_ITEM = 'DELETE_LIST_ITEM'
+export const TOGGLE_LIST_ITEM = 'TOGGLE_LIST_ITEM'
 export const DESELECT_LIST = 'DESELECT_LIST'
 
 // To do action types 
