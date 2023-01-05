@@ -1,7 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
-import { deselectList, } from '../../redux/actions/selectedList'
+import { updateList } from '../../redux/actions/lists'
+import { deselectList } from '../../redux/actions/selectedList'
 
 import Header from '../header/Header'
 import ToDoItem from '../to-do-item/ToDoItem'
@@ -10,6 +11,7 @@ import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
 
 const SelectedList = () => {
 	const dispatch = useDispatch()
+	const selectedList = useSelector(state => state.selectedList)
 	const listItems = useSelector(state => state.selectedList.items)
 	const userName = useSelector(state => state.userName)
 	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
@@ -19,6 +21,7 @@ const SelectedList = () => {
 	}
 
 	const handleBackClick = () => {
+		dispatch(updateList(selectedList))
 		dispatch(deselectList())
 	}
 
