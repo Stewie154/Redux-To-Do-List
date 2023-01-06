@@ -1,4 +1,11 @@
-import { SELECT_LIST, DESELECT_LIST, CREATE_LIST_ITEM, DELETE_LIST_ITEM, TOGGLE_LIST_ITEM } from "./types"
+import { 
+	SELECT_LIST, 
+	DESELECT_LIST,
+	CREATE_LIST_ITEM, 
+	DELETE_LIST_ITEM, 
+	TOGGLE_LIST_ITEM, 
+	EDIT_LIST_ITEM
+} from "./types"
 
 export const selectList = (list) => {
 	return {
@@ -31,5 +38,12 @@ export const toggleListItem = (id) => {
 	return {
 		type: TOGGLE_LIST_ITEM,
 		payload: id
+	}
+}
+
+export const editListItem = (dataObject) => {
+	return {
+		type: EDIT_LIST_ITEM,
+		payload: dataObject
 	}
 }
