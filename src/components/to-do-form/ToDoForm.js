@@ -36,7 +36,7 @@ const ToDoForm = () => {
 		else if (currentTaskText !== '') {
 			let data = {
 				updatedText: currentTaskText,
-				selectedToDo: selectedToDo
+				selectedItem: selectedToDo
 			}
 			dispatch(editListItem(data))
 			dispatch(deselectToDo())

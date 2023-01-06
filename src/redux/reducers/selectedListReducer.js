@@ -32,7 +32,7 @@ export default (state = null, action) => {
 		case EDIT_LIST_ITEM:
 			let editedItems = state.items.map(item => {
 				if (item.id === action.payload.selectedItem.id) {
-					item.text = action.payload.updatedText
+					item.title = action.payload.updatedText
 					return item
 				}
 				else {
