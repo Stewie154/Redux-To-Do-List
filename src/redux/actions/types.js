@@ -14,6 +14,11 @@ export const TOGGLE_LIST_ITEM = 'TOGGLE_LIST_ITEM'
 export const EDIT_LIST_ITEM = 'EDIT_LIST_ITEM'
 export const DESELECT_LIST = 'DESELECT_LIST'
 
+// Selected List Item action types
+
+export const SELECT_LIST_ITEM = 'SELECT_LIST_ITEM'
+export const DESELECT_LIST_ITEM = 'DESELECT_LIST_ITEM'
+
 // To do action types 
 export const CREATE_TODO = 'CREATE_TODO'
 export const TOGGLE_TODO = 'TOGGLE_TODO'

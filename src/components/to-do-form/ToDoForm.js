@@ -3,12 +3,12 @@ import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/toDoForm'
 import { createToDo, editToDo } from '../../redux/actions/toDos'
 import { createListItem, editListItem } from '../../redux/actions/selectedList'
-import { deselectToDo } from '../../redux/actions/selectedToDo'
+import { deselectListItem } from '../../redux/actions/selectedListItem'
 
 const ToDoForm = () => {
 	const currentTaskText = useSelector(state => state.currentTaskText)
 	const userName = useSelector(state => state.userName)
-	const selectedToDo = useSelector(state => state.selectedToDo)
+	const selectedListItem = useSelector(state => state.selectedListItem)
 
 	const dispatch = useDispatch()
 
@@ -18,17 +18,17 @@ const ToDoForm = () => {
 		dispatch(updateText(textValue))
 	}
 
-	const handleEditText = (selectedToDo) => {
-		if (selectedToDo !== null) {
-			dispatch(updateText(selectedToDo.title))
+	const handleEditText = (selectedListItem) => {
+		if (selectedListItem !== null) {
+			dispatch(updateText(selectedListItem.title))
 			textInput.current.focus()
 
 		}
 	}
 
-	const handleSubmit = (event, currentTaskText, selectedToDo) => {
+	const handleSubmit = (event, currentTaskText, selectedListItem) => {
 		event.preventDefault()
-		if (currentTaskText !== '' & selectedToDo === null) {
+		if (currentTaskText !== '' & selectedListItem === null) {
 			let newListItem = { id: Date.now(), title: currentTaskText, completed: false }
 			dispatch(createListItem(newListItem))
 			dispatch(updateText(''))
@@ -36,10 +36,10 @@ const ToDoForm = () => {
 		else if (currentTaskText !== '') {
 			let data = {
 				updatedText: currentTaskText,
-				selectedItem: selectedToDo
+				selectedItem: selectedListItem
 			}
 			dispatch(editListItem(data))
-			dispatch(deselectToDo())
+			dispatch(deselectListItem())
 			dispatch(updateText(''))
 		}
 	}
@@ -49,13 +49,13 @@ const ToDoForm = () => {
 	}, [userName])
 
 	useEffect(() => {
-		handleEditText(selectedToDo)
-	}, [selectedToDo])
+		handleEditText(selectedListItem)
+	}, [selectedListItem])
 
 	return (
 		<form
 			className={`${userName === '' && 'hidden'} absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
-			onSubmit={(event) => handleSubmit(event, currentTaskText, selectedToDo)}
+			onSubmit={(event) => handleSubmit(event, currentTaskText, selectedListItem)}
 		>
 			<input
 				type="text"
