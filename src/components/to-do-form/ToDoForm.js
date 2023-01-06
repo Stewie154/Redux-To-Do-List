@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/toDoForm'
 import { createToDo, editToDo } from '../../redux/actions/toDos'
-import { createListItem } from '../../redux/actions/selectedList'
+import { createListItem, editListItem } from '../../redux/actions/selectedList'
 import { deselectToDo } from '../../redux/actions/selectedToDo'
 
 const ToDoForm = () => {
@@ -38,7 +38,7 @@ const ToDoForm = () => {
 				updatedText: currentTaskText,
 				selectedToDo: selectedToDo
 			}
-			dispatch(editToDo(data))
+			dispatch(editListItem(data))
 			dispatch(deselectToDo())
 			dispatch(updateText(''))
 		}

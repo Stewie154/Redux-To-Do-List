@@ -1,4 +1,11 @@
-import { SELECT_LIST, DESELECT_LIST, CREATE_LIST_ITEM, DELETE_LIST_ITEM, TOGGLE_LIST_ITEM } from '../actions/types'
+import { 
+	SELECT_LIST, 
+	DESELECT_LIST, 
+	CREATE_LIST_ITEM, 
+	DELETE_LIST_ITEM, 
+	TOGGLE_LIST_ITEM, 
+	EDIT_LIST_ITEM
+} from '../actions/types'
 
 export default (state = null, action) => {
 	switch (action.type) {
@@ -22,6 +29,17 @@ export default (state = null, action) => {
 				}
 			})
 			return {...state, items: toggled}
+		case EDIT_LIST_ITEM:
+			let editedItems = state.items.map(item => {
+				if (item.id === action.payload.selectedItem.id) {
+					item.text = action.payload.updatedText
+					return item
+				}
+				else {
+					return item
+				}
+			})
+			return {...state, items: editedItems}
 		default:
 			return state
 	}
