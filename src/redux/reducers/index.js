@@ -7,12 +7,14 @@ import clearToDosModalReducer from "./clearToDosModalReducer"
 import listsReducer from "./listsReducer"
 import selectedListReducer from "./selectedListReducer"
 import createListFormReducer from "./createListFormReducer"
+import listEditingTitleReducer from "./listEditingTitleReducer"
 import listsModalReducer from "./listsModalReducer"
 
 export default combineReducers({
 	userName: userReducer,
 	lists: listsReducer,
 	selectedList: selectedListReducer,
+	listEditingTitle: listEditingTitleReducer,
 	currentListTitle: createListFormReducer,
 	toDos: toDoReducer,
 	currentTaskText: toDoFormReducer,
