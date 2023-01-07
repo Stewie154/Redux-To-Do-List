@@ -2,11 +2,15 @@ import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/createListForm'
 import { createList } from '../../redux/actions/lists'
+import { updateList } from '../../redux/actions/lists'
+import { deselectListForTitleEdit } from '../../redux/actions/listEditingTitle'
+
 
 const CreateListForm = () => {
 	const dispatch = useDispatch()
 	const currentListTitle = useSelector(state => state.currentListTitle)
 	const userName = useSelector(state => state.userName)
+	const listEditingTitle = useSelector(state => state.listEditingTitle)
 
 	const textInput = useRef(null)
 
@@ -14,12 +18,19 @@ const CreateListForm = () => {
 		textInput.current.focus()
 	}, [textInput])
 
+	useEffect(() => {
+		if (listEditingTitle !== null) {
+			dispatch(updateText(listEditingTitle.title))
+			textInput.current.focus()
+		}
+	}, [listEditingTitle])
+
 	const handleChange = (textValue) => {
 		dispatch(updateText(textValue))
 	}
 	const handleSubmit = (event) => {
 		event.preventDefault()
-		if (currentListTitle !== '') {
+		if (currentListTitle !== '' && listEditingTitle === null) {
 			let newList = { 
 				id: Date.now(), 
 				title: currentListTitle, 
@@ -27,6 +38,12 @@ const CreateListForm = () => {
 			}
 			dispatch(createList(newList))
 			dispatch(updateText(''))
+		}
+		else {
+			let updatedList = {...listEditingTitle, title: currentListTitle}
+			dispatch(updateList(updatedList))
+			dispatch(updateText(''))
+			dispatch(deselectListForTitleEdit())
 		}
 	}
 

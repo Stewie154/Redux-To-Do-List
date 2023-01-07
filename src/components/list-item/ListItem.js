@@ -7,7 +7,6 @@ import { toggleListsModal } from '../../redux/actions/listsModal';
 import { selectList } from '../../redux/actions/selectedList';
 import { selectListForTitleEdit } from '../../redux/actions/listEditingTitle'
 
-
 const ListItem = ({ list }) => {
 
 	const dispatch = useDispatch()
