@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 
 import { toggleListsModal } from '../../redux/actions/listsModal';
 import { selectList } from '../../redux/actions/selectedList';
+import { selectListForTitleEdit } from '../../redux/actions/listEditingTitle'
 
 
 const ListItem = ({ list }) => {
@@ -19,6 +20,10 @@ const ListItem = ({ list }) => {
 		dispatch(selectList(list))
 	}
 
+	const handleEditListTitle = (list) => {
+		dispatch(selectListForTitleEdit(list))
+	}
+
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
@@ -30,7 +35,7 @@ const ListItem = ({ list }) => {
 						src="/images/icons/pencil.svg"
 						alt="check icon"
 						className="w-6 md:w-8 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
-						onClick={() => console.log(list.id)}
+						onClick={() => handleEditListTitle(list)}
 					/>
 					<img
 						src="/images/icons/trash-outline.svg"
