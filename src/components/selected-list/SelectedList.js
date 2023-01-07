@@ -60,12 +60,15 @@ const SelectedList = () => {
 	
 
 	return (
-		<div className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
+		<>	
 			<Header />
-			{renderBackAndClearButtons}
-			{renderContent()}
+			<main className={`h-[60%] overflow-scroll ${userName === ''  && 'hidden'}`}>
+				{renderBackAndClearButtons}
+				{renderContent()}
+			</main>
 			<ToDoForm />
-		</div>
+		</>
+		
 	)
 }
 
