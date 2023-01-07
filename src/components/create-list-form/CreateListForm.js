@@ -23,7 +23,6 @@ const CreateListForm = () => {
 			let newList = { 
 				id: Date.now(), 
 				title: currentListTitle, 
-				selected: false, 
 				items: []
 			}
 			dispatch(createList(newList))
