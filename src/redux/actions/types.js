@@ -6,6 +6,8 @@ export const EDIT_LIST = 'EDIT_LIST'
 export const CLEAR_ALL_LISTS = 'CLEAR_ALL_LISTS'
 export const SELECT_LIST = 'SELECT_LIST'
 export const UPDATE_LIST = 'UPDATE_LIST'
+export const SELECT_LIST_FOR_TITLE_UPDATE = 'SELECT_LIST_FOR_TITLE_UPDATE'
+export const DESELECT_LIST_FOR_TITLE_UPDATE = 'DESELECT_LIST_FOR_TITLE_UPDATE'
 
 // Selected List action types
 export const CREATE_LIST_ITEM = 'CREATE_LIST_ITEM'
@@ -15,8 +17,8 @@ export const TOGGLE_LIST_ITEM = 'TOGGLE_LIST_ITEM'
 export const EDIT_LIST_ITEM = 'EDIT_LIST_ITEM'
 export const DESELECT_LIST = 'DESELECT_LIST'
 
-// Selected List Item action types
 
+// Selected List Item action types
 export const SELECT_LIST_ITEM = 'SELECT_LIST_ITEM'
 export const DESELECT_LIST_ITEM = 'DESELECT_LIST_ITEM'
 
