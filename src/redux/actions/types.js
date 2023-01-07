@@ -10,6 +10,7 @@ export const UPDATE_LIST = 'UPDATE_LIST'
 // Selected List action types
 export const CREATE_LIST_ITEM = 'CREATE_LIST_ITEM'
 export const DELETE_LIST_ITEM = 'DELETE_LIST_ITEM'
+export const CLEAR_LIST = 'CLEAR_LIST'
 export const TOGGLE_LIST_ITEM = 'TOGGLE_LIST_ITEM'
 export const EDIT_LIST_ITEM = 'EDIT_LIST_ITEM'
 export const DESELECT_LIST = 'DESELECT_LIST'

@@ -2,13 +2,14 @@ import React from 'react'
 
 import { useDispatch } from 'react-redux'
 import { clearAllToDos } from '../../redux/actions/toDos'
+import { clearList } from '../../redux/actions/selectedList'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
 
 const ClearToDosModal = () => {
 	const dispatch = useDispatch()
 
 	const handleYesClick = () => {
-		dispatch(clearAllToDos())
+		dispatch(clearList())
 		dispatch(toggleToDosModal())
 	}
 

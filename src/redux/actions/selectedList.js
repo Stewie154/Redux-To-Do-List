@@ -4,7 +4,8 @@ import {
 	CREATE_LIST_ITEM, 
 	DELETE_LIST_ITEM, 
 	TOGGLE_LIST_ITEM, 
-	EDIT_LIST_ITEM
+	EDIT_LIST_ITEM,
+	CLEAR_LIST
 } from "./types"
 
 export const selectList = (list) => {
@@ -31,6 +32,12 @@ export const deleteListItem = (id) => {
 	return {
 		type: DELETE_LIST_ITEM,
 		payload: id
+	}
+}
+
+export const clearList = () => {
+	return {
+		type: CLEAR_LIST
 	}
 }
 

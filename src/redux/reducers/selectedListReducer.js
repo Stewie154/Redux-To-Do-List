@@ -4,7 +4,8 @@ import {
 	CREATE_LIST_ITEM, 
 	DELETE_LIST_ITEM, 
 	TOGGLE_LIST_ITEM, 
-	EDIT_LIST_ITEM
+	EDIT_LIST_ITEM,
+	CLEAR_LIST
 } from '../actions/types'
 
 export default (state = null, action) => {
@@ -40,6 +41,8 @@ export default (state = null, action) => {
 				}
 			})
 			return {...state, items: editedItems}
+		case CLEAR_LIST:
+			return {...state, items: []}
 		default:
 			return state
 	}

@@ -37,7 +37,7 @@ const SelectedList = () => {
 					className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
 					onClick={() => handleToggleClearAllModal()}
 				>
-					Clear To-do list
+					Clear list
 				</p>
 			}
 		</section>
