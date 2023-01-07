@@ -11,14 +11,19 @@ const Header = () => {
 	const dispatch = useDispatch()
 
 	const openModal = () => {
-		dispatch(setUserName(''))
+		if (selectedList === null) {
+			dispatch(setUserName(''))
+		}
 	}
 
 	const text = selectedList === null ? <>{userName}'s list application</> : <>{selectedList.title}</>
 
 	const header = (
 		<Fade>
-			<h1 className="h-[20%] flex justify-center items-center md:py-10 text-2xl md:text-4xl text-center underline cursor-pointer hover:text-3xl md:hover:text-5xl header-hover transition-all" onClick={openModal}>
+			<h1 
+				className={`h-[20%] flex justify-center items-center md:py-10 text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
+				onClick={openModal}
+			>
 				{text}
 			</h1>
 		</Fade>
