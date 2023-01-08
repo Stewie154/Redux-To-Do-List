@@ -11,12 +11,13 @@ const CreateListForm = () => {
 	const currentListTitle = useSelector(state => state.currentListTitle)
 	const userName = useSelector(state => state.userName)
 	const listEditingTitle = useSelector(state => state.listEditingTitle)
+	const listsModalInfo = useSelector(state => state.listsModalInfo)
 
 	const textInput = useRef(null)
 
 	useEffect(() => {
 		textInput.current.focus()
-	}, [textInput, userName])
+	}, [textInput, userName, listsModalInfo])
 
 	useEffect(() => {
 		if (listEditingTitle !== null) {
