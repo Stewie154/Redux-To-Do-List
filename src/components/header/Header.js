@@ -27,7 +27,7 @@ const Header = () => {
 	}
 
 	const renderBackAndClearButtons = (
-		<section className="flex justify-between items-center">
+		<section className="w-full flex justify-between items-center">
 			<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all" onClick={() => handleBackClick()}>
 				<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
 				<p>Back to my lists</p>
@@ -38,9 +38,9 @@ const Header = () => {
 
 	const header = (
 		<Fade>
-			<header className="h-[20%] flex justify-center items-center">
+			<header className="h-[20%] flex flex-col justify-around items-center">
 				<h1 
-					className={`md:py-10 text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
+					className={`text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
 					onClick={openModal}
 				>
 					{text}
