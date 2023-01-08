@@ -16,7 +16,7 @@ const CreateListForm = () => {
 
 	useEffect(() => {
 		textInput.current.focus()
-	}, [textInput])
+	}, [textInput, userName])
 
 	useEffect(() => {
 		if (listEditingTitle !== null) {
