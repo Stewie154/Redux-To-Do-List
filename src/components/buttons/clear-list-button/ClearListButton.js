@@ -13,7 +13,7 @@ const ClearListButton = () => {
 	}
 	return (
 		<p 
-			className={`${selectedList === null ? 'hidden' : 'w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline'}`}
+			className={`${selectedList.items.length < 2  ? 'hidden' : 'w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline'}`}
 			onClick={() => handleToggleClearAllModal()}
 		>
 			Clear list

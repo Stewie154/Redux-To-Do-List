@@ -1,6 +1,9 @@
 import React from 'react'
 import EnterNameModal from '../enter-name-modal/EnterNameModal'
+import ClearListButton from '../buttons/clear-list-button/ClearListButton'
 import { setUserName } from '../../redux/actions/user'
+import { updateList } from '../../redux/actions/lists'
+import { deselectList } from '../../redux/actions/selectedList'
 import { useSelector, useDispatch } from 'react-redux'
 import Fade from 'react-reveal/Fade';
 
@@ -18,15 +21,31 @@ const Header = () => {
 
 	const text = selectedList === null ? <>{userName}'s list application</> : <>{selectedList.title}</>
 
+	const handleBackClick = () => {
+		dispatch(updateList(selectedList))
+		dispatch(deselectList())
+	}
+
+	const renderBackAndClearButtons = (
+		<section className="flex justify-between items-center">
+			<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all" onClick={() => handleBackClick()}>
+				<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
+				<p>Back to my lists</p>
+			</div>
+			{selectedList && <ClearListButton />}
+		</section>
+	)
+
 	const header = (
 		<Fade>
 			<header className="h-[20%] flex justify-center items-center">
 				<h1 
-					className={`  md:py-10 text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
+					className={`md:py-10 text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
 					onClick={openModal}
 				>
 					{text}
 				</h1>
+				{selectedList !== null && renderBackAndClearButtons}
 			</header>
 		</Fade>
 	)
