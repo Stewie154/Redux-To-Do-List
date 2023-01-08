@@ -8,6 +8,7 @@ import Header from '../header/Header'
 import ListItem from '../list-item/ListItem'
 import ListItemForm from '../list-item-form/ListItemForm'
 import ClearListItemsModal from '../clear-list-items-modal/ClearListItemsModal'
+import ClearListButton from '../buttons/clear-list-button/ClearListButton'
 
 const SelectedList = () => {
 	const dispatch = useDispatch()
@@ -16,9 +17,6 @@ const SelectedList = () => {
 	const userName = useSelector(state => state.userName)
 	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
 
-	const handleToggleClearAllModal = () => {
-		dispatch(toggleListItemsModal())
-	}
 
 	const handleBackClick = () => {
 		dispatch(updateList(selectedList))
@@ -31,15 +29,7 @@ const SelectedList = () => {
 				<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
 				<p>Back to my lists</p>
 			</div>
-			{
-				listItems.length > 0 && 
-				<p 
-					className="w-fit ml-auto pb-2.5 italic opacity-90 tracking-wider text-right cursor-pointer hover:opacity-50 hover:underline"
-					onClick={() => handleToggleClearAllModal()}
-				>
-					Clear list
-				</p>
-			}
+			{listItems.length > 1 && <ClearListButton />}
 		</section>
 	)
 
