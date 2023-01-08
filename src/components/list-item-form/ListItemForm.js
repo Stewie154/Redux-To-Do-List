@@ -65,7 +65,7 @@ const ListItemForm = () => {
 				ref={textInput}
 			/>
 			<button type="submit" className="self-center border border-color-secondary py-2 px-4 rounded-lg transition-all duration-75 ease-out hover:ease-in hover:opacity-70">
-				Add Task
+				Add Item
 			</button>
 		</form>
 	)
