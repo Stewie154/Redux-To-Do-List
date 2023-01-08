@@ -12,11 +12,11 @@ import listsModalReducer from "./listsModalReducer"
 export default combineReducers({
 	userName: userReducer,
 	lists: listsReducer,
-	selectedList: selectedListReducer,
-	listEditingTitle: listEditingTitleReducer,
+	listsModalInfo: listsModalReducer,
 	currentListTitle: createListFormReducer,
-	currentTaskText: toDoFormReducer,
+	listEditingTitle: listEditingTitleReducer,
+	selectedList: selectedListReducer,
 	selectedListItem: selectedListItemReducer,
-	clearAllModalOpen: clearToDosModalReducer,
-	listsModalInfo: listsModalReducer
+	currentTaskText: toDoFormReducer,
+	clearAllModalOpen: clearToDosModalReducer
 })
