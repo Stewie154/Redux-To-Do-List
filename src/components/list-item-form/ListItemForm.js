@@ -59,7 +59,7 @@ const ListItemForm = () => {
 			<input
 				type="text"
 				value={currentTaskText}
-				placeholder="Enter to do task..."
+				placeholder="Enter list item name..."
 				className="w-9/12 bg-transparent border-0 text-lg md:text-2xl focus:outline-0"
 				onChange={(e) => { handleChange(e.target.value) }}
 				ref={textInput}

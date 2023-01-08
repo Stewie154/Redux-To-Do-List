@@ -56,7 +56,7 @@ const CreateListForm = () => {
 			<input
 				type="text"
 				value={currentListTitle}
-				placeholder="Create a new list..."
+				placeholder="Enter list title..."
 				className="w-9/12 bg-transparent border-0 text-lg md:text-2xl focus:outline-0"
 				onChange={(e) => { handleChange(e.target.value) }}
 				ref={textInput}
