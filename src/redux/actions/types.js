@@ -22,7 +22,7 @@ export const DESELECT_LIST = 'DESELECT_LIST'
 export const SELECT_LIST_ITEM = 'SELECT_LIST_ITEM'
 export const DESELECT_LIST_ITEM = 'DESELECT_LIST_ITEM'
 
-// To do form action types
+// List item form action types
 export const UPDATE_TEXT = 'UPDATE_TEXT'
 
 // Create list form action types
@@ -32,7 +32,7 @@ export const EDIT_LIST_NAME = 'EDIT_LIST_NAME'
 export const SET_USERNAME = 'SET_USERNAME'
 
 // Modal action types
-export const TOGGLE_CLEAR_TO_DOS_MODAL = 'TOGGLE_CLEAR_TO_DOS_MODAL'
+export const TOGGLE_CLEAR_LIST_ITEMS_MODAL = 'TOGGLE_CLEAR_LIST_ITEMS_MODAL'
 export const TOGGLE_LISTS_MODAL = 'TOGGLE_LISTS_MODAL'
 
 

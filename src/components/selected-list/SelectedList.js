@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
+import { toggleListItemsModal } from '../../redux/actions/clearListItemsModal'
 import { updateList } from '../../redux/actions/lists'
 import { deselectList } from '../../redux/actions/selectedList'
 
 import Header from '../header/Header'
-import ToDoItem from '../to-do-item/ToDoItem'
-import ToDoForm from '../to-do-form/ToDoForm'
-import ClearToDosModal from '../clear-to-dos-modal/ClearToDosModal'
+import ListItem from '../list-item/ListItem'
+import ListItemForm from '../list-item-form/ListItemForm'
+import ClearListItemsModal from '../clear-list-items-modal/ClearListItemsModal'
 
 const SelectedList = () => {
 	const dispatch = useDispatch()
@@ -17,7 +17,7 @@ const SelectedList = () => {
 	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
 
 	const handleToggleClearAllModal = () => {
-		dispatch(toggleToDosModal())
+		dispatch(toggleListItemsModal())
 	}
 
 	const handleBackClick = () => {
@@ -45,13 +45,13 @@ const SelectedList = () => {
 
 	const renderContent = () => {
 		if (clearAllModalOpen) {
-			return <ClearToDosModal />
+			return <ClearListItemsModal />
 		}
 		else {
 			if (listItems.length > 0) {
 				return listItems.map((item, key) => {
 					return (
-						<ToDoItem item={item} key={key}/>
+						<ListItem item={item} key={key}/>
 					)
 				})
 			}
@@ -66,7 +66,7 @@ const SelectedList = () => {
 				{renderBackAndClearButtons}
 				{renderContent()}
 			</main>
-			<ToDoForm />
+			<ListItemForm />
 		</>
 		
 	)

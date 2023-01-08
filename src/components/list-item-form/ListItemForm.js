@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { updateText } from '../../redux/actions/toDoForm'
+import { updateText } from '../../redux/actions/listItemForm'
 import { createListItem, editListItem } from '../../redux/actions/selectedList'
 import { deselectListItem } from '../../redux/actions/selectedListItem'
 
-const ToDoForm = () => {
+const ListItemForm = () => {
 	const currentTaskText = useSelector(state => state.currentTaskText)
 	const userName = useSelector(state => state.userName)
 	const selectedListItem = useSelector(state => state.selectedListItem)
@@ -71,4 +71,4 @@ const ToDoForm = () => {
 	)
 }
 
-export default ToDoForm
+export default ListItemForm

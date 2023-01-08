@@ -2,18 +2,18 @@ import React from 'react'
 
 import { useDispatch } from 'react-redux'
 import { clearList } from '../../redux/actions/selectedList'
-import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
+import { toggleListItemsModal } from '../../redux/actions/clearListItemsModal'
 
-const ClearToDosModal = () => {
+const ClearListItemsModal = () => {
 	const dispatch = useDispatch()
 
 	const handleYesClick = () => {
 		dispatch(clearList())
-		dispatch(toggleToDosModal())
+		dispatch(toggleListItemsModal())
 	}
 
 	const handleNoClick = () => {
-		dispatch(toggleToDosModal())
+		dispatch(toggleListItemsModal())
 	}
 
 	return (
@@ -39,4 +39,4 @@ const ClearToDosModal = () => {
 	)
 }
 
-export default ClearToDosModal
+export default ClearListItemsModal

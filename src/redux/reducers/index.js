@@ -1,8 +1,8 @@
 import { combineReducers } from "redux"
 import userReducer from './userReducer'
-import toDoFormReducer from "./toDoFormReducer"
+import listItemFormReducer from "./listItemFormReducer"
 import selectedListItemReducer from "./selectedListItemReducer"
-import clearToDosModalReducer from "./clearToDosModalReducer"
+import clearListItemsModalReducer from "./clearListItemsModalReducer"
 import listsReducer from "./listsReducer"
 import selectedListReducer from "./selectedListReducer"
 import createListFormReducer from "./createListFormReducer"
@@ -17,6 +17,6 @@ export default combineReducers({
 	listEditingTitle: listEditingTitleReducer,
 	selectedList: selectedListReducer,
 	selectedListItem: selectedListItemReducer,
-	currentTaskText: toDoFormReducer,
-	clearAllModalOpen: clearToDosModalReducer
+	currentTaskText: listItemFormReducer,
+	clearAllModalOpen: clearListItemsModalReducer
 })
