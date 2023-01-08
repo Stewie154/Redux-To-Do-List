@@ -1,7 +1,6 @@
 import React from 'react'
 
 import { useDispatch } from 'react-redux'
-import { clearAllToDos } from '../../redux/actions/toDos'
 import { clearList } from '../../redux/actions/selectedList'
 import { toggleToDosModal } from '../../redux/actions/clearToDosModal'
 

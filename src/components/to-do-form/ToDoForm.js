@@ -1,7 +1,6 @@
 import React, { useRef, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { updateText } from '../../redux/actions/toDoForm'
-import { createToDo, editToDo } from '../../redux/actions/toDos'
 import { createListItem, editListItem } from '../../redux/actions/selectedList'
 import { deselectListItem } from '../../redux/actions/selectedListItem'
 
