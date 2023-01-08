@@ -20,12 +20,14 @@ const Header = () => {
 
 	const header = (
 		<Fade>
-			<h1 
-				className={`h-[20%] flex justify-center items-center md:py-10 text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
-				onClick={openModal}
-			>
-				{text}
-			</h1>
+			<header className="h-[20%] flex justify-center items-center">
+				<h1 
+					className={`  md:py-10 text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
+					onClick={openModal}
+				>
+					{text}
+				</h1>
+			</header>
 		</Fade>
 	)
 
