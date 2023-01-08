@@ -26,8 +26,7 @@ export default (state = initialState, action) => {
 			})
 			return updatedList
 		case DELETE_ALL_LISTS:
-			state = []
-			return state
+			return []
 		default:
 			return state
 	}
