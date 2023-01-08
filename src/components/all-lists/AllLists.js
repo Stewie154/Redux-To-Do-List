@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { toggleListsModal } from '../../redux/actions/listsModal'
 import Header from '../header/Header'
-import ListItem from '../list-item/ListItem'
+import ListComponent from '../list-component/ListComponent'
 import CreateListForm from '../create-list-form/CreateListForm'
 import AllListsModal from '../all-lists-modal/AllListsModal'
 
@@ -32,7 +32,7 @@ const AllLists = () => {
 		if (userName !== '') {
 			return lists.map(list => {
 				return (
-					<ListItem key={list.id} list={list} />
+					<ListComponent key={list.id} list={list} />
 				)
 			})
 		}
