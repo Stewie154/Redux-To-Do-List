@@ -43,7 +43,7 @@ const ListItemForm = () => {
 	}
 
 	useEffect(() => {
-		if (window.innerWidth > 1024) {
+		if (window.innerWidth > 820) {
 			textInput.current.focus()
 		}
 	}, [userName])
