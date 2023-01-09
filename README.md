@@ -61,6 +61,39 @@ To do list to be generated with create-react-app and state to be managed with re
 * Step 5:
 	* Store all data in local storage so to dos are still there after a page load (redux-persist)
 
+* Step 6:
+	* Create component for clear-to-dos modal
+	* Add state to redux store for clearAllModalOpen
+	* render component when state is clearAllModalOpen true
+	* set clearAllModalOpen to true on 'Clear To-Do List' text click
+	* Clear todos from store when 'yes' is clicked in modal, then toggle clearAllModalOpen
+	* Close modal and keep don't clear to dos on modal 'no' button click
+
+* Step 7 (refactor to add multiple lists feature): 
+	* Create AllListsComponent to display a list of to do lists (hard - coded html)
+		* Adjust styles of current Header component for a smaller username in top left of container, change text to something more suitable eg (from 'list' to 'task app')
+		* Under Header component display AllListsComponent
+		* Need to display Create list button (like current 'add task' button)
+		* add placeholder of 'enter list title eg "shopping"'
+		* Create list button adds item to lists with pre entered name
+		* clicking a list displays list as normal
+			* move user name to top of container with smaller text
+			* show list title where user name is currently
+	* Add state to redux store for an array of lists
+		* List to have:
+			* title
+			* id
+			* selected (boolean)
+			* items (array of current to do items)
+	* Display pre built component with data from redux store
+		* create necessary actions & reducers for all lists 
+	* Add state to redux store for selected list
+	* Add 'back / all lists' button opposite 'Clear To-Do list' button
+	* Clicking the 'back / all lists' button to take user back to list of lists (deselect selected list)
+	* Make sure user can create, read, update & delete new lists
+	* Make sure original functionality works for individual list, (create, read update delete tasks)
+	* Make sure all state remains in store on page refresh
+
 
 ## first time set up
 `nvm use 14`

@@ -1,25 +1,25 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { deleteToDo, editToDo, toggleToDo } from '../../redux/actions/toDos'
-import { selectToDo } from '../../redux/actions/selectedToDo'
+import { selectListItem } from '../../redux/actions/selectedListItem'
+import { deleteListItem, toggleListItem } from '../../redux/actions/selectedList'
 import Fade from 'react-reveal/Fade';
 
 
 
-const ToDoItem = ({ item }) => {
+const ListItem = ({ item }) => {
 	const dispatch = useDispatch()
 
 	const handleDelete = (id) => {
-		dispatch(deleteToDo(id))
+		dispatch(deleteListItem(id))
 	}
 
 	const toggleComplete = (id) => {
-		dispatch(toggleToDo(id))
+		dispatch(toggleListItem(id))
 	}
 
-	const editToDo = (toDo) => {
-		if (toDo.completed === false) {
-			dispatch(selectToDo(toDo))
+	const editListItem = (listItem) => {
+		if (listItem.completed === false) {
+			dispatch(selectListItem(listItem))
 		}
 	}
 
@@ -28,7 +28,7 @@ const ToDoItem = ({ item }) => {
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
-				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl ${!item.completed && 'hover:opacity-80 cursor-pointer'} ${item.completed && 'line-through opacity-20'}`} onClick={() => editToDo(item)}>
+				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl ${!item.completed && 'hover:opacity-80 cursor-pointer'} ${item.completed && 'line-through opacity-20'}`} onClick={() => editListItem(item)}>
 					{item.title}
 				</p>
 				<div className="flex">
@@ -51,4 +51,4 @@ const ToDoItem = ({ item }) => {
 	)
 }
 
-export default ToDoItem
+export default ListItem
