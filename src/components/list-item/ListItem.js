@@ -35,13 +35,13 @@ const ListItem = ({ item }) => {
 					<img
 						src={icon}
 						alt="check icon"
-						className="w-6 md:w-8 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
+						className="w-6 md:w-8 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:opacity-70"
 						onClick={() => toggleComplete(item.id)}
 					/>
 					<img
 						src="/images/icons/trash-outline.svg"
 						alt="trash icon"
-						className="w-6 md:w-8 cursor-pointer transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
+						className="w-6 md:w-8 cursor-pointer transition-all duration-150 ease-out hover:ease-in hover:opacity-70"
 						onClick={() => handleDelete(item.id)}
 					/>
 				</div>
