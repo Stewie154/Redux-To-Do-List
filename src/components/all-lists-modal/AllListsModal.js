@@ -6,6 +6,7 @@ import { deleteList, deleteAllLists } from '../../redux/actions/lists'
 const AllListsModal = () => {
 	const dispatch = useDispatch()
 	const clickedItemId = useSelector(state => state.listsModalInfo.clickedListId)
+	const lists = useSelector(state => state.lists)
 
 	const handleYesClick = () => {
 		if (clickedItemId !== null) {
@@ -22,7 +23,14 @@ const AllListsModal = () => {
 		dispatch(toggleListsModal())
 	}
 
-	const text = clickedItemId === null ? <h3 className="mb-10 text-lg sm:text-xl md:text-2xl">Are you sure you want to <span className="italic text-red-500">delete all lists</span> and all of their contents?</h3>: <h3 className="mb-10 text-lg sm:text-xl md:text-2xl">Are you sure you want to <span className="italic text-red-500">delete this list</span> and all of it's contents?</h3>
+	const getListTitle = () => {
+		if (clickedItemId !== null) {
+			let list = lists.find( li => li.id === clickedItemId)
+			return list.title
+		}
+	}
+
+	const text = clickedItemId === null ? <h3 className="mb-10 text-lg sm:text-xl md:text-2xl">Are you sure you want to <span className="italic text-red-500">delete all lists</span> and all of their contents?</h3>: <h3 className="mb-10 text-lg sm:text-xl md:text-2xl">Are you sure you want to <span className="italic text-red-500">delete "{getListTitle()}"</span> and all of it's contents?</h3>
 
 	return (
 		<div className="modal-background-color absolute z-20 top-0 left-0 flex flex-col justify-center items-center rounded-lg border border-color-secondary h-full w-full">
