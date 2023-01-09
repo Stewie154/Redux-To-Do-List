@@ -30,7 +30,7 @@ const Header = () => {
 	const renderBackAndClearButtons = (
 		<section className="w-full flex justify-between items-center">
 			<div className="flex items-center flex-grow cursor-pointer hover:opacity-60 hover:underline transition-all" onClick={() => handleBackClick()}>
-				<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7"/>
+				<img src="/images/icons/arrow-back-outline.svg" className="mr-4 w-7" alt="back arrow icon"/>
 				<p>Back to my lists</p>
 			</div>
 			{selectedList && <ClearListButton />}
