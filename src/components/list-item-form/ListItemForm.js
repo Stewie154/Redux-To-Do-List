@@ -53,6 +53,8 @@ const ListItemForm = () => {
 		handleEditText(selectedListItem)
 	}, [selectedListItem])
 
+	const buttonText = selectedListItem === null ? 'Add Item' : 'Update Item'
+
 	return (
 		<form
 			className={`${userName === '' && 'hidden'} absolute bottom-0 left-0 w-full h-[20%] px-5 md:px-10 flex justify-between items-between border-t rounded-b-lg border-color-secondary container-background-color`}
@@ -67,7 +69,7 @@ const ListItemForm = () => {
 				ref={textInput}
 			/>
 			<button type="submit" className="self-center border border-color-secondary py-2 px-4 rounded-lg transition-all duration-75 ease-out hover:ease-in hover:opacity-70">
-				Add Item
+				{buttonText}
 			</button>
 		</form>
 	)
