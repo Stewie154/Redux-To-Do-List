@@ -1,5 +1,6 @@
 import React from 'react'
 import EnterNameModal from '../enter-name-modal/EnterNameModal'
+import ClearAllListsButton from '../buttons/clear-all-lists-button/ClearAllListsButton'
 import ClearListButton from '../buttons/clear-list-button/ClearListButton'
 import { setUserName } from '../../redux/actions/user'
 import { updateList } from '../../redux/actions/lists'
@@ -45,7 +46,7 @@ const Header = () => {
 				>
 					{text}
 				</h1>
-				{selectedList !== null && renderBackAndClearButtons}
+				{selectedList !== null ? renderBackAndClearButtons : <ClearAllListsButton />}
 			</header>
 		</Fade>
 	)
