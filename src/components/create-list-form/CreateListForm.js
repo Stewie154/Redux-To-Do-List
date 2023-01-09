@@ -16,7 +16,7 @@ const CreateListForm = () => {
 	const textInput = useRef(null)
 
 	useEffect(() => {
-		if (window.innerWidth > 1024) {
+		if (window.innerWidth > 1024 & listsModalInfo.modalOpen === false ) {
 			textInput.current.focus()
 		}
 	}, [textInput, userName, listsModalInfo])
