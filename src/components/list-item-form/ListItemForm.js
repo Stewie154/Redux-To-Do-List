@@ -8,6 +8,7 @@ const ListItemForm = () => {
 	const currentTaskText = useSelector(state => state.currentTaskText)
 	const userName = useSelector(state => state.userName)
 	const selectedListItem = useSelector(state => state.selectedListItem)
+	const clearAllModalOpen = useSelector(state => state.clearAllModalOpen)
 
 	const dispatch = useDispatch()
 
@@ -43,10 +44,10 @@ const ListItemForm = () => {
 	}
 
 	useEffect(() => {
-		if (window.innerWidth > 820) {
+		if (window.innerWidth > 820 & clearAllModalOpen === false) {
 			textInput.current.focus()
 		}
-	}, [userName])
+	}, [clearAllModalOpen])
 
 	useEffect(() => {
 		handleEditText(selectedListItem)
