@@ -38,7 +38,7 @@ const Header = () => {
 
 	const header = (
 		<Fade>
-			<header className="h-[20%] flex flex-col justify-around items-center">
+			<header className="h-[20%] flex flex-col justify-evenly items-center">
 				<h1 
 					className={`text-2xl md:text-4xl text-center underline transition-all ${selectedList === null && 'cursor-pointer hover:text-3xl md:hover:text-5xl header-hover'}`} 
 					onClick={openModal}
