@@ -33,13 +33,13 @@ const ListComponent = ({ list }) => {
 					<img
 						src="/images/icons/pencil.svg"
 						alt="check icon"
-						className="w-5 md:w-7 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
+						className="w-5 md:w-7 cursor-pointer mr-3 transition-all duration-150 ease-out hover:ease-in hover:opacity-50"
 						onClick={() => handleEditListTitle(list)}
 					/>
 					<img
 						src="/images/icons/trash-outline.svg"
 						alt="trash icon"
-						className="w-6 md:w-8 cursor-pointer transition-all duration-150 ease-out hover:ease-in hover:w-8 md:hover:w-10 hover:opacity-70"
+						className="w-6 md:w-8 cursor-pointer transition-all duration-150 ease-out hover:ease-in hover:opacity-50"
 						onClick={() => handleDeleteClick(list.id)}
 					/>
 				</div>
