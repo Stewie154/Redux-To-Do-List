@@ -22,7 +22,7 @@ const EnterNameModal = () => {
 	}
 
 	useEffect(() => {
-		textInput.current.focus()
+		textInput.current.focus()	
 	}, [])
 
 	return (

@@ -21,7 +21,6 @@ const ListItemForm = () => {
 		if (selectedListItem !== null) {
 			dispatch(updateText(selectedListItem.title))
 			textInput.current.focus()
-
 		}
 	}
 
@@ -44,7 +43,9 @@ const ListItemForm = () => {
 	}
 
 	useEffect(() => {
-		textInput.current.focus()
+		if (window.innerWidth > 1024) {
+			textInput.current.focus()
+		}
 	}, [userName])
 
 	useEffect(() => {
