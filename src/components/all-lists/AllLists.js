@@ -12,7 +12,10 @@ const AllLists = () => {
 
 
 	const renderContent = () => {
-		if (userName !== '') {
+		if (listsModalOpen) {
+			return <AllListsModal />
+		}
+		else if (userName !== '') {
 			return lists.map(list => {
 				return (
 					<ListComponent key={list.id} list={list} />
@@ -28,7 +31,6 @@ const AllLists = () => {
 				{renderContent()}
 			</main>
 			<CreateListForm />
-			{listsModalOpen ? <AllListsModal /> : null}
 		</>
 	)
 }
