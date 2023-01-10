@@ -9,6 +9,12 @@
 	font-weight: 400;
 }
 
+input {
+	&:focus {
+		outline: none;
+	}
+}
+
 .background-primary {
 	background: linear-gradient($color-primary-1, $color-primary-2);
 }
