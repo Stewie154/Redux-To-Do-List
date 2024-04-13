@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Fade from "react-reveal/Fade";
 
 const Header = () => {
-	const userName = useSelector((state) => state.userName);
+	const userName = useSelector((state) => state.user.name);
 	const selectedList = useSelector((state) => state.selectedList);
 	const dispatch = useDispatch();
 
