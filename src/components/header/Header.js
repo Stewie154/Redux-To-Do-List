@@ -10,7 +10,9 @@ import Fade from "react-reveal/Fade";
 
 const Header = () => {
 	const userName = useSelector((state) => state.user.name);
-	const selectedList = useSelector((state) => state.selectedList);
+	const selectedList = useSelector(
+		(state) => state.selectedContent.selectedList,
+	);
 	const dispatch = useDispatch();
 
 	const openModal = () => {
