@@ -1,19 +1,19 @@
-import React from 'react'
-import '../../index.css'
-import '../../styles/global.scss'
-import Fade from 'react-reveal/Fade';
-import { useSelector } from 'react-redux';
+import React from "react";
+import "../../index.css";
+import "../../styles/global.scss";
+import Fade from "react-reveal/Fade";
+import { useSelector } from "react-redux";
 
-import SelectedList from '../selected-list/SelectedList'
-import AllLists from '../all-lists/AllLists';
-
+import SelectedList from "../selected-list/SelectedList";
+import AllLists from "../all-lists/AllLists";
 
 const App = () => {
-	const selectedList = useSelector(state => state.selectedList)
+	const selectedList = useSelector((state) => state.selectedList);
 
 	const renderContent = () => {
-		return selectedList === null ? <AllLists /> : <SelectedList />
-	}
+		// return selectedList === null ? <AllLists /> : <SelectedList />
+		return <AllLists />;
+	};
 
 	return (
 		<div className="background-primary w-screen h-screen flex justify-center items-center">
@@ -23,7 +23,7 @@ const App = () => {
 				</main>
 			</Fade>
 		</div>
-	)
-}
+	);
+};
 
-export default App
+export default App;
