@@ -10,7 +10,9 @@ const CreateListForm = () => {
 	const currentListTitle = useSelector((state) => state.currentListTitle);
 	const userName = useSelector((state) => state.userName);
 	const listEditingTitle = useSelector((state) => state.listEditingTitle);
-	const listsModalInfo = useSelector((state) => state.listsModalInfo);
+	const listsModalInfo = useSelector(
+		(state) => state.modalsInfo.listsModalInfo,
+	);
 
 	const textInput = useRef(null);
 
