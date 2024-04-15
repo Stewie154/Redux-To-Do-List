@@ -69,7 +69,13 @@ const initialState = [
 export const listsSlice = createSlice({
 	name: "lists",
 	initialState,
-	reducers: {},
+	reducers: {
+		deleteList: (state, action) => {
+			state.filter((list) => list.id === action.payload);
+		},
+	},
 });
+
+export const { deleteList } = listsSlice.actions;
 
 export default listsSlice.reducer;
