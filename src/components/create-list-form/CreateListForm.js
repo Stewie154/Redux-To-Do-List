@@ -9,7 +9,9 @@ const CreateListForm = () => {
 	const dispatch = useDispatch();
 	const currentListTitle = useSelector((state) => state.currentListTitle);
 	const userName = useSelector((state) => state.userName);
-	const listEditingTitle = useSelector((state) => state.listEditingTitle);
+	const listEditingTitle = useSelector(
+		(state) => state.editContent.list.editingTitleId,
+	);
 	const listsModalInfo = useSelector(
 		(state) => state.modalsInfo.listsModalInfo,
 	);
