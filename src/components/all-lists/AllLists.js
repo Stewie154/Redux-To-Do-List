@@ -9,7 +9,7 @@ const AllLists = () => {
 	const userName = useSelector((state) => state.userName);
 	const lists = useSelector((state) => state.lists);
 	// const listsModalOpen = useSelector(
-	// 	(state) => state.listsModalInfo.modalOpen,
+	// 	(state) => state.listModalInfo.modalOpen,
 	// );
 	const listsModalOpen = false;
 

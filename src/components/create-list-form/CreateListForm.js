@@ -12,17 +12,17 @@ const CreateListForm = () => {
 	const listEditingTitle = useSelector(
 		(state) => state.editContent.list.editingTitleId,
 	);
-	const listsModalInfo = useSelector(
-		(state) => state.modalsInfo.listsModalInfo,
+	const listModalInfo = useSelector(
+		(state) => state.modalsInfo.listModalInfo,
 	);
 
 	const textInput = useRef(null);
 
 	useEffect(() => {
-		if ((window.innerWidth > 820) & (listsModalInfo.modalOpen === false)) {
+		if ((window.innerWidth > 820) & (listModalInfo.modalOpen === false)) {
 			textInput.current.focus();
 		}
-	}, [textInput, userName, listsModalInfo]);
+	}, [textInput, userName, listModalInfo]);
 
 	useEffect(() => {
 		if (listEditingTitle !== null) {
