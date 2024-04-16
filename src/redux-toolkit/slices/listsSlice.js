@@ -73,9 +73,12 @@ export const listsSlice = createSlice({
 		deleteList: (state, action) => {
 			state.filter((list) => list.id === action.payload);
 		},
+		deleteAllLists: (state) => {
+			state = [];
+		},
 	},
 });
 
-export const { deleteList } = listsSlice.actions;
+export const { deleteList, deleteAllLists } = listsSlice.actions;
 
 export default listsSlice.reducer;

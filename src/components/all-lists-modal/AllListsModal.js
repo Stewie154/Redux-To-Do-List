@@ -1,7 +1,10 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleListModal } from "../../redux-toolkit/slices/modalsSlice";
-import { deleteList, deleteAllLists } from "../../redux/actions/lists";
+import {
+	deleteList,
+	deleteAllLists,
+} from "../../redux-toolkit/slices/listsSlice";
 
 const AllListsModal = () => {
 	const dispatch = useDispatch();
