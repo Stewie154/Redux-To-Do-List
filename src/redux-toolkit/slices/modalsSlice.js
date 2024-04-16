@@ -12,7 +12,10 @@ export const modalsSlice = createSlice({
 	name: "modalsInfo",
 	initialState,
 	reducers: {
-		toggleListModal: (state) => {
+		toggleListModal: (state, action) => {
+			state.listModalInfo.clickedListId = action.payload
+				? action.payload
+				: null;
 			state.listModalInfo.modalOpen = !state.listModalInfo.modalOpen;
 		},
 	},

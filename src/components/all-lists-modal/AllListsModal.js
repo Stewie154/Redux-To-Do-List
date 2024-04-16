@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { toggleListsModal } from "../../redux/actions/listsModal";
+import { toggleListModal } from "../../redux-toolkit/slices/modalsSlice";
 import { deleteList, deleteAllLists } from "../../redux/actions/lists";
 
 const AllListsModal = () => {
@@ -13,15 +13,15 @@ const AllListsModal = () => {
 	const handleYesClick = () => {
 		if (clickedItemId !== null) {
 			dispatch(deleteList(clickedItemId));
-			dispatch(toggleListsModal());
+			dispatch(toggleListModal());
 		} else {
 			dispatch(deleteAllLists());
-			dispatch(toggleListsModal());
+			dispatch(toggleListModal());
 		}
 	};
 
 	const handleNoClick = () => {
-		dispatch(toggleListsModal());
+		dispatch(toggleListModal());
 	};
 
 	const getListTitle = () => {

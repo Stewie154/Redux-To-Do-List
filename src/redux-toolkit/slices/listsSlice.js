@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = [
 	{
-		id: 0,
+		id: 1,
 		title: "List One Title",
 		items: [
 			{
@@ -23,7 +23,7 @@ const initialState = [
 		],
 	},
 	{
-		id: 1,
+		id: 2,
 		title: "List Two Title",
 		items: [
 			{
@@ -44,7 +44,7 @@ const initialState = [
 		],
 	},
 	{
-		id: 2,
+		id: 3,
 		title: "List Three Title",
 		items: [
 			{

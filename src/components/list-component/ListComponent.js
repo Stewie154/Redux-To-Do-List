@@ -1,32 +1,34 @@
-import React from 'react'
-import Fade from 'react-reveal/Fade';
+import React from "react";
+import Fade from "react-reveal/Fade";
 
-import { useDispatch } from 'react-redux'
+import { useDispatch } from "react-redux";
 
-import { toggleListsModal } from '../../redux/actions/listsModal';
-import { selectList } from '../../redux/actions/selectedList';
-import { selectListForTitleEdit } from '../../redux/actions/listEditingTitle'
+import { toggleListModal } from "../../redux-toolkit/slices/modalsSlice";
+import { selectList } from "../../redux/actions/selectedList";
+import { selectListForTitleEdit } from "../../redux/actions/listEditingTitle";
 
 const ListComponent = ({ list }) => {
-
-	const dispatch = useDispatch()
+	const dispatch = useDispatch();
 
 	const handleDeleteClick = (id) => {
-		dispatch(toggleListsModal(id))
-	}
+		dispatch(toggleListModal(id));
+	};
 
 	const handleSelectList = (list) => {
-		dispatch(selectList(list))
-	}
+		dispatch(selectList(list));
+	};
 
 	const handleEditListTitle = (list) => {
-		dispatch(selectListForTitleEdit(list))
-	}
+		dispatch(selectListForTitleEdit(list));
+	};
 
 	return (
 		<Fade top duration={500}>
 			<div className="flex justify-between items-center py-2">
-				<p className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl hover:opacity-60 cursor-pointer`} onClick={() => handleSelectList(list)}>
+				<p
+					className={`text-lg text-left max-w-[70%] sm:max-w-full md:text-2xl hover:opacity-60 cursor-pointer`}
+					onClick={() => handleSelectList(list)}
+				>
 					{list.title}
 				</p>
 				<div className="flex">
@@ -45,7 +47,7 @@ const ListComponent = ({ list }) => {
 				</div>
 			</div>
 		</Fade>
-	)
-}
+	);
+};
 
-export default ListComponent
+export default ListComponent;
