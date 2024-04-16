@@ -9,7 +9,7 @@ import {
 const AllListsModal = () => {
 	const dispatch = useDispatch();
 	const clickedItemId = useSelector(
-		(state) => state.listModalInfo.clickedListId,
+		(state) => state.modalsInfo.listModalInfo.clickedListId,
 	);
 	const lists = useSelector((state) => state.lists);
 
