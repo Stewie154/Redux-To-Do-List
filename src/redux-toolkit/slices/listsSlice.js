@@ -71,10 +71,10 @@ export const listsSlice = createSlice({
 	initialState,
 	reducers: {
 		deleteList: (state, action) => {
-			state = state.filter((list) => list.id === action.payload);
+			return state.filter((list) => list.id !== action.payload);
 		},
-		deleteAllLists: (state) => {
-			state = [];
+		deleteAllLists: () => {
+			return [];
 		},
 	},
 });
