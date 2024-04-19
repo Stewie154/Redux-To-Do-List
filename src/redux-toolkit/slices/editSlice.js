@@ -2,15 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 	list: {
-		editingTitleId: null,
-		currentTitle: "",
+		id: null,
+		title: "",
 	},
 };
 
 export const editSlice = createSlice({
 	name: "edit",
 	initialState,
-	reducers: {},
+	reducers: {
+		updateId: (state, action) => {
+			state.list.id = action.payload;
+		},
+	},
 });
+
+export const { updateId } = editSlice.actions;
 
 export default editSlice.reducer;
