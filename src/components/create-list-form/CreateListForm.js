@@ -4,7 +4,7 @@ import { updateText } from "../../redux/actions/createListForm";
 import { createList } from "../../redux/actions/lists";
 import { updateList } from "../../redux/actions/lists";
 import { deselectListForTitleEdit } from "../../redux/actions/listEditingTitle";
-import { updateNewListTitle } from "../../redux-toolkit/slices/createContentSlice";
+import { updateListTitle } from "../../redux-toolkit/slices/createContentSlice";
 
 const CreateListForm = () => {
 	const dispatch = useDispatch();
@@ -29,13 +29,13 @@ const CreateListForm = () => {
 
 	useEffect(() => {
 		if (listEditingTitle !== null) {
-			dispatch(updateText(listEditingTitle.title));
+			dispatch(updateListTitle(listEditingTitle.title));
 			textInput.current.focus();
 		}
 	}, [listEditingTitle]);
 
 	const handleChange = (textValue) => {
-		dispatch(updateText(textValue));
+		dispatch(updateListTitle(textValue));
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();

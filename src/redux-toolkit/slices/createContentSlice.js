@@ -15,12 +15,12 @@ export const createContentSlice = createSlice({
 	name: "createContent",
 	initialState,
 	reducers: {
-		updateNewListTitle: (state, action) => {
-			return (state.list.newListTitle = action.payload);
+		updateListTitle: (state, action) => {
+			state.list.newTitle = action.payload;
 		},
 	},
 });
 
-export const { updateNewListTitle } = createContentSlice.actions;
+export const { updateListTitle } = createContentSlice.actions;
 
 export default createContentSlice.reducer;
