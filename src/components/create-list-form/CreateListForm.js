@@ -1,10 +1,10 @@
 import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateText } from "../../redux/actions/createListForm";
-import { createList } from "../../redux/actions/lists";
 import { updateList } from "../../redux/actions/lists";
 import { deselectListForTitleEdit } from "../../redux/actions/listEditingTitle";
 import { updateListTitle } from "../../redux-toolkit/slices/createContentSlice";
+import { createList } from "../../redux-toolkit/slices/listsSlice";
 
 const CreateListForm = () => {
 	const dispatch = useDispatch();
@@ -46,7 +46,7 @@ const CreateListForm = () => {
 				items: [],
 			};
 			dispatch(createList(newList));
-			dispatch(updateText(""));
+			dispatch(updateListTitle(""));
 		} else {
 			let updatedList = { ...listEditingTitle, title: newListTitle };
 			dispatch(updateList(updatedList));

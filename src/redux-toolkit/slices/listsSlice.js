@@ -77,12 +77,7 @@ export const listsSlice = createSlice({
 			return [];
 		},
 		createList: (state, action) => {
-			let newList = {
-				id: new Date.now(),
-				title: action.payload,
-				items: [],
-			};
-			state.push(newList);
+			state.push(action.payload);
 		},
 	},
 });
