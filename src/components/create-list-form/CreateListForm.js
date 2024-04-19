@@ -12,8 +12,9 @@ const CreateListForm = () => {
 		(state) => state.createContent.list.newTitle,
 	);
 	const userName = useSelector((state) => state.userName);
-	const listEditingTitle = useSelector(
-		(state) => state.editContent.list.editingTitleId,
+	const editContentListId = useSelector((state) => state.editContent.list.id);
+	const editContentListTitle = useSelector(
+		(state) => state.editContent.list.title,
 	);
 	const listModalInfo = useSelector(
 		(state) => state.modalsInfo.listModalInfo,
@@ -28,18 +29,18 @@ const CreateListForm = () => {
 	}, [textInput, userName, listModalInfo]);
 
 	useEffect(() => {
-		if (listEditingTitle !== null) {
-			dispatch(updateListTitle(listEditingTitle.title));
+		if (editContentListId !== null) {
+			dispatch(updateListTitle(editContentListTitle));
 			textInput.current.focus();
 		}
-	}, [listEditingTitle]);
+	}, [editContentListTitle, editContentListId]);
 
 	const handleChange = (textValue) => {
 		dispatch(updateListTitle(textValue));
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (newListTitle !== "" && listEditingTitle === null) {
+		if (newListTitle !== "" && editContentListId === null) {
 			let newList = {
 				id: Date.now(),
 				title: newListTitle,
@@ -48,7 +49,7 @@ const CreateListForm = () => {
 			dispatch(createList(newList));
 			dispatch(updateListTitle(""));
 		} else {
-			let updatedList = { ...listEditingTitle, title: newListTitle };
+			let updatedList = { ...editContentListTitle, title: newListTitle };
 			dispatch(updateList(updatedList));
 			dispatch(updateText(""));
 			dispatch(deselectListForTitleEdit());
@@ -56,7 +57,7 @@ const CreateListForm = () => {
 	};
 
 	const buttonText =
-		listEditingTitle === null ? "Create List" : "Update Title";
+		editContentListId === null ? "Create List" : "Update Title";
 
 	return (
 		<form
