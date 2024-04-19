@@ -4,10 +4,13 @@ import { updateText } from "../../redux/actions/createListForm";
 import { createList } from "../../redux/actions/lists";
 import { updateList } from "../../redux/actions/lists";
 import { deselectListForTitleEdit } from "../../redux/actions/listEditingTitle";
+import { updateNewListTitle } from "../../redux-toolkit/slices/createContentSlice";
 
 const CreateListForm = () => {
 	const dispatch = useDispatch();
-	const currentListTitle = useSelector((state) => state.currentListTitle);
+	const newListTitle = useSelector(
+		(state) => state.createContent.list.newTitle,
+	);
 	const userName = useSelector((state) => state.userName);
 	const listEditingTitle = useSelector(
 		(state) => state.editContent.list.editingTitleId,
@@ -36,16 +39,16 @@ const CreateListForm = () => {
 	};
 	const handleSubmit = (event) => {
 		event.preventDefault();
-		if (currentListTitle !== "" && listEditingTitle === null) {
+		if (newListTitle !== "" && listEditingTitle === null) {
 			let newList = {
 				id: Date.now(),
-				title: currentListTitle,
+				title: newListTitle,
 				items: [],
 			};
 			dispatch(createList(newList));
 			dispatch(updateText(""));
 		} else {
-			let updatedList = { ...listEditingTitle, title: currentListTitle };
+			let updatedList = { ...listEditingTitle, title: newListTitle };
 			dispatch(updateList(updatedList));
 			dispatch(updateText(""));
 			dispatch(deselectListForTitleEdit());
@@ -64,7 +67,7 @@ const CreateListForm = () => {
 		>
 			<input
 				type="text"
-				value={currentListTitle}
+				value={newListTitle}
 				placeholder="Enter list title..."
 				className="w-9/12 bg-transparent border-0 text-lg md:text-2xl focus:outline-0"
 				onChange={(e) => {

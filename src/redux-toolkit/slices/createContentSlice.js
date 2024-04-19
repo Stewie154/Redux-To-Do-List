@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
 	list: {
 		creating: false,
-		newListText: "",
+		newTitle: "",
 	},
 	listItem: {
 		creating: false,
@@ -14,7 +14,13 @@ const initialState = {
 export const createContentSlice = createSlice({
 	name: "createContent",
 	initialState,
-	reducers: {},
+	reducers: {
+		updateNewListTitle: (state, action) => {
+			return (state.list.newListTitle = action.payload);
+		},
+	},
 });
+
+export const { updateNewListTitle } = createContentSlice.actions;
 
 export default createContentSlice.reducer;
