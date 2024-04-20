@@ -15,9 +15,13 @@ export const editSlice = createSlice({
 			state.list.id = action.payload.id;
 			state.list.title = action.payload.title;
 		},
+		deselectList: (state) => {
+			state.list.id = null;
+			state.list.title = "";
+		},
 	},
 });
 
-export const { editList } = editSlice.actions;
+export const { editList, deselectList } = editSlice.actions;
 
 export default editSlice.reducer;

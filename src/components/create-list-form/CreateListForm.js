@@ -2,7 +2,7 @@ import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateText } from "../../redux/actions/createListForm";
 import { updateList } from "../../redux/actions/lists";
-import { deselectListForTitleEdit } from "../../redux/actions/listEditingTitle";
+import { deselectList } from "../../redux-toolkit/slices/editSlice";
 import { updateListTitle } from "../../redux-toolkit/slices/createContentSlice";
 import { createList } from "../../redux-toolkit/slices/listsSlice";
 
@@ -38,6 +38,7 @@ const CreateListForm = () => {
 	const handleChange = (textValue) => {
 		dispatch(updateListTitle(textValue));
 	};
+
 	const handleSubmit = (event) => {
 		event.preventDefault();
 		if (newListTitle !== "" && editContentListId === null) {
@@ -52,7 +53,7 @@ const CreateListForm = () => {
 			let updatedList = { ...editContentListTitle, title: newListTitle };
 			dispatch(updateList(updatedList));
 			dispatch(updateText(""));
-			dispatch(deselectListForTitleEdit());
+			dispatch(deselectList());
 		}
 	};
 
