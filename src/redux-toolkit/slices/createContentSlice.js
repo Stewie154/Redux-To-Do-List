@@ -1,14 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-	list: {
-		creating: false,
-		newTitle: "",
-	},
-	listItem: {
-		creating: false,
-		newItemText: "",
-	},
+	listTitle: "",
+	listItemTitle: "",
 };
 
 export const createContentSlice = createSlice({
@@ -16,7 +10,7 @@ export const createContentSlice = createSlice({
 	initialState,
 	reducers: {
 		updateListTitle: (state, action) => {
-			state.list.newTitle = action.payload;
+			state.listTitle = action.payload;
 		},
 	},
 });

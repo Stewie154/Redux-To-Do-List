@@ -7,9 +7,7 @@ import { createList } from "../../redux-toolkit/slices/listsSlice";
 
 const CreateListForm = () => {
 	const dispatch = useDispatch();
-	const newListTitle = useSelector(
-		(state) => state.createContent.list.newTitle,
-	);
+	const newListTitle = useSelector((state) => state.createContent.listTitle);
 	const userName = useSelector((state) => state.userName);
 	const editContentListId = useSelector((state) => state.editContent.list.id);
 	const editContentListTitle = useSelector(
