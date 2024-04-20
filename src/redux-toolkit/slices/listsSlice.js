@@ -79,9 +79,15 @@ export const listsSlice = createSlice({
 		createList: (state, action) => {
 			state.push(action.payload);
 		},
+		updateList: (state, action) => {
+			const { id, title } = action.payload;
+			let listToUpdate = state.find((l) => l.id == id);
+			listToUpdate.title = title;
+		},
 	},
 });
 
-export const { deleteList, deleteAllLists, createList } = listsSlice.actions;
+export const { deleteList, deleteAllLists, createList, updateList } =
+	listsSlice.actions;
 
 export default listsSlice.reducer;

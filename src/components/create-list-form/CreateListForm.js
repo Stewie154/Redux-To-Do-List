@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateText } from "../../redux/actions/createListForm";
-import { updateList } from "../../redux/actions/lists";
+import { updateList } from "../../redux-toolkit/slices/listsSlice";
 import { deselectList } from "../../redux-toolkit/slices/editSlice";
 import { updateListTitle } from "../../redux-toolkit/slices/createContentSlice";
 import { createList } from "../../redux-toolkit/slices/listsSlice";
@@ -50,7 +50,7 @@ const CreateListForm = () => {
 			dispatch(createList(newList));
 			dispatch(updateListTitle(""));
 		} else {
-			let updatedList = { ...editContentListTitle, title: newListTitle };
+			let updatedList = { title: newListTitle, id: editContentListId };
 			dispatch(updateList(updatedList));
 			dispatch(updateText(""));
 			dispatch(deselectList());
