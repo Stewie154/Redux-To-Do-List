@@ -11,12 +11,12 @@ export const editSlice = createSlice({
 	name: "edit",
 	initialState,
 	reducers: {
-		updateId: (state, action) => {
+		editList: (state, action) => {
 			state.list.id = action.payload;
 		},
 	},
 });
 
-export const { updateId } = editSlice.actions;
+export const { editList } = editSlice.actions;
 
 export default editSlice.reducer;

@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { toggleListModal } from "../../redux-toolkit/slices/modalsSlice";
 import { selectList } from "../../redux/actions/selectedList";
 import { selectListForTitleEdit } from "../../redux/actions/listEditingTitle";
+import { editList } from "../../redux-toolkit/slices/editSlice";
 
 const ListComponent = ({ list }) => {
 	const dispatch = useDispatch();
@@ -18,8 +19,8 @@ const ListComponent = ({ list }) => {
 		dispatch(selectList(list));
 	};
 
-	const handleEditListTitle = (list) => {
-		dispatch(selectListForTitleEdit(list));
+	const handleEditClick = (list) => {
+		dispatch(editList(list.id));
 	};
 
 	return (
@@ -36,7 +37,7 @@ const ListComponent = ({ list }) => {
 						src="/images/icons/pencil.svg"
 						alt="check icon"
 						className="w-5 md:w-7 cursor-pointer mr-3 transition-all duration-150 ease-out sm:hover:ease-in sm:hover:opacity-50"
-						onClick={() => handleEditListTitle(list)}
+						onClick={() => handleEditClick(list)}
 					/>
 					<img
 						src="/images/icons/trash-outline.svg"
