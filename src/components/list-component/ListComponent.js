@@ -5,7 +5,6 @@ import { useDispatch } from "react-redux";
 
 import { toggleListModal } from "../../redux-toolkit/slices/modalsSlice";
 import { selectList } from "../../redux/actions/selectedList";
-import { selectListForTitleEdit } from "../../redux/actions/listEditingTitle";
 import { editList } from "../../redux-toolkit/slices/editSlice";
 
 const ListComponent = ({ list }) => {
