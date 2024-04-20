@@ -20,7 +20,7 @@ const ListComponent = ({ list }) => {
 	};
 
 	const handleEditClick = (list) => {
-		dispatch(editList(list.id));
+		dispatch(editList(list));
 	};
 
 	return (

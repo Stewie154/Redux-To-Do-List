@@ -12,7 +12,8 @@ export const editSlice = createSlice({
 	initialState,
 	reducers: {
 		editList: (state, action) => {
-			state.list.id = action.payload;
+			state.list.id = action.payload.id;
+			state.list.title = action.payload.title;
 		},
 	},
 });
